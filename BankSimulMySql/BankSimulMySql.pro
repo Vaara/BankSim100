@@ -31,7 +31,7 @@ HEADERS += \
         banksimulmysql.h \
         banksimulmysql_global.h 
 
-DESTDIR = C:\Users\samij\Desktop\BankSim\BankSim100\dll
+DESTDIR = C:\Users\samij\Desktop\BankSim\BankSim100\BankSimulator\dll
 
 unix {
     target.path = /usr/lib
