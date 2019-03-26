@@ -18,6 +18,7 @@ bool DLLMySql::openDatabase()
 bool DLLMySql::rfidExists(QString rfid)
 {
     QSqlQuery query;
+    query.setForwardOnly(true);
     query.exec("SELECT idCard FROM opisk_t8josa01.Cards WHERE rfidNumber ='" + rfid +"'");
     query.next();
     if (query.value(0).isNull()) {

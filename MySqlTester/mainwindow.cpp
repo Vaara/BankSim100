@@ -20,24 +20,24 @@ void MainWindow::on_pushButton_clicked()
     if (mySql->openDatabase())
     {
         //Database connected
+
         if (mySql->rfidExists("0b123456789"))
         {
             //rfid found
-            //ui->label->setText("löytyi");
-            if (mySql->validExpiration("0b123456789"))
+
+            if (mySql->validCard("0b123456789"))
             {
-                ui->label->setText("Voimassa");
+                ui->label->setText("Kortti toiminnallinen");
             }
             else
             {
-                ui->label->setText("Ei voimassa");
+                ui->label->setText("Kortti suljettu");
             }
 
         }
         else
         {
             //rfid not found
-            //ui->label->setText("ei ole");
         }
     } else
     {

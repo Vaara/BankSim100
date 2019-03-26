@@ -12,7 +12,7 @@ public:
     void setDatabase();
     bool openDatabase();
     bool rfidExists(QString rfid);
-    bool validExpiration(QString rfid);
+    bool validCard(QString rfid);
 private:
     QSqlDatabase db;
 };
