@@ -27,7 +27,15 @@ void MainWindow::on_pushButton_clicked()
 
             if (mySql->validCard("0b123456789"))
             {
-                ui->label->setText("Kortti toiminnallinen");
+                //ui->label->setText("Kortti toiminnallinen");
+                if (mySql->checkPIN("0b123456789","1234"))
+                {
+                    ui->label->setText("PIN oikein");
+                }
+                else
+                {
+                    ui->label->setText("Pin väärin");
+                }
             }
             else
             {

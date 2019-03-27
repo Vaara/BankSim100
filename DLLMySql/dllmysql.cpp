@@ -18,6 +18,7 @@ bool DLLMySql::openDatabase()
 bool DLLMySql::rfidExists(QString rfid)
 {
     QSqlQuery query;
+    query.setForwardOnly(true);
     query.exec("SELECT idCard FROM opisk_t8josa01.Cards WHERE rfidNumber ='" + rfid +"'");
     query.next();
     if (query.value(0).isNull()) {
@@ -36,6 +37,19 @@ bool DLLMySql::validCard(QString rfid)
     int validCard = query.value(1).toInt();
     qint64 daysLeft = today.daysTo(expiration);
     if (daysLeft >= 0 && validCard == 1 ) {
+        return true;
+    }
+    return false;
+}
+
+bool DLLMySql::checkPIN(QString rfid, QString inputPin)
+{
+    QSqlQuery query;
+    query.exec("SELECT cardPin FROM opisk_t8josa01.Cards WHERE rfidNumber ='" + rfid +"'");
+    query.next();
+    QString accountPin = query.value(0).toString();
+    if (inputPin == accountPin)
+    {
         return true;
     }
     return false;

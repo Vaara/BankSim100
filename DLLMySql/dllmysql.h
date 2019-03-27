@@ -13,6 +13,7 @@ public:
     bool openDatabase();
     bool rfidExists(QString rfid);
     bool validCard(QString rfid);
+    bool checkPIN(QString rfid, QString inputPin);
 private:
     QSqlDatabase db;
 };
