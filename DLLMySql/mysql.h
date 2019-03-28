@@ -1,24 +1,19 @@
-#ifndef DLLMYSQL_H
-#define DLLMYSQL_H
+#ifndef MYSQL_H
+#define MYSQL_H
 
-<<<<<<< HEAD
+#endif // MYSQL_H
 #include "dllmysql_global.h"
 #include <QtSql>
-#include <QDate>
 
-class DLLMYSQLSHARED_EXPORT DLLMySql
+class DLLMYSQLSHARED_EXPORT MySql
 {
-
 public:
     void setDatabase();
     bool openDatabase();
     bool rfidExists(QString rfid);
     bool validCard(QString rfid);
-    bool checkPIN(QString rfid, QString inputPin);
+    bool checkPin(QString rfid, QString inputPin);
+    void closeDatabase();
 private:
     QSqlDatabase db;
 };
-
-=======
->>>>>>> master
-#endif // DLLMYSQL_H

@@ -25,11 +25,22 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+<<<<<<< HEAD
         dllmysql.cpp
 
 HEADERS += \
         dllmysql.h \
         dllmysql_global.h 
+=======
+        mysql.cpp \
+        databaseconnection.cpp
+
+HEADERS += \
+        mysql.h \
+        dllmysql_global.h \
+        databaseconnection.h \
+    dllmysql.h
+>>>>>>> master
 
 DESTDIR = C:\Users\samij\Desktop\BankSim\BankSim100\BankSimulator\dll\
 
