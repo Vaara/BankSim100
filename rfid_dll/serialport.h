@@ -7,16 +7,16 @@
 class RFID_DLLSHARED_EXPORT serialport
 {
 public:
-    serialport();
+    serialport(QString com);
+    void connect();
     QString print();
-    void connectPort();
-    QString getserialRead();
     QString cardNumber();
-
+    QString other();
+    int a = 1;
 private:
     QSerialPort *serial;
     QString serialRead;
-
+    QSerialPortInfo *serialName;
 
 };
 

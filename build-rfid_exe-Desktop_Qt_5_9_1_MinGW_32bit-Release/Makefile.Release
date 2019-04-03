@@ -514,8 +514,7 @@ release/mainwindow.o: ../rfid_exe/mainwindow.cpp ../rfid_exe/mainwindow.h \
 		../../Qt/Qt5.9.1/5.9.1/mingw53_32/include/QtWidgets/QToolBar \
 		../../Qt/Qt5.9.1/5.9.1/mingw53_32/include/QtWidgets/qtoolbar.h \
 		../../Qt/Qt5.9.1/5.9.1/mingw53_32/include/QtWidgets/QWidget \
-		../../Qt/Qt5.9.1/5.9.1/mingw53_32/include/QtCore/QDebug \
-		../../Qt/Qt5.9.1/5.9.1/mingw53_32/include/QtCore/QObject
+		../../Qt/Qt5.9.1/5.9.1/mingw53_32/include/QtCore/QDebug
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\mainwindow.o ..\rfid_exe\mainwindow.cpp
 
 release/moc_mainwindow.o: release/moc_mainwindow.cpp 
