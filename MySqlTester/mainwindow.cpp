@@ -17,6 +17,7 @@ MainWindow::~MainWindow()
 void MainWindow::on_pushButton_clicked()
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
     DLLMySql *mySql = new DLLMySql;
 =======
     /*MySql *mySql = new MySql;
@@ -24,13 +25,17 @@ void MainWindow::on_pushButton_clicked()
     if (mySql->openDatabase())
     {
         //Database connected
+=======
+   DatabaseConnection *connection = new DatabaseConnection;
+>>>>>>> master
 
-        if (mySql->rfidExists("0b123456789"))
+    if (connection->initialize("0b123456789"))
+    {
+        if(connection->checkPin("1234"))
         {
-            //rfid found
-
-            if (mySql->validCard("0b123456789"))
+            if (connection->withdrawMoney(10000))
             {
+<<<<<<< HEAD
                 //ui->label->setText("Kortti toiminnallinen");
 <<<<<<< HEAD
                 if (mySql->checkPIN("0b123456789","1234"))
@@ -44,11 +49,15 @@ void MainWindow::on_pushButton_clicked()
                 {
                     ui->label->setText("Pin väärin");
                 }
+=======
+                this->ui->label->setText("Rahat nostettu");
+>>>>>>> master
             }
             else
             {
-                ui->label->setText("Kortti suljettu");
+                this->ui->label->setText("Rahat ei riitä");
             }
+<<<<<<< HEAD
 
         }
         else
@@ -75,6 +84,8 @@ void MainWindow::on_pushButton_clicked()
         if(connection->checkPin("1235"))
         {
             this->ui->label->setText("Pin oikein");
+=======
+>>>>>>> master
         }
         else
         {
@@ -84,9 +95,13 @@ void MainWindow::on_pushButton_clicked()
     else
     {
         QString error = connection->getErrorMessage();
+        this->ui->label->setText(error);
     }
     delete connection;
     connection = nullptr;
+<<<<<<< HEAD
 
+>>>>>>> master
+=======
 >>>>>>> master
 }

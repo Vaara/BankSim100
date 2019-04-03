@@ -14,6 +14,13 @@ public:
     bool validCard(QString rfid);
     bool checkPin(QString rfid, QString inputPin);
     void closeDatabase();
+    void updateLoginDatetime(QString rfid);
+    bool databaseIsOpen();
+    void lockCard(QString rfid);
+    QString getCurrentLoginDatetime(QString rfid);
+    QString getLastLoginDatetime(QString rfid);
+    bool checkAccountBalanceForWithdrawal(QString rfid, double balance);
+    bool substractMoneyFromAccount(QString rfid, double balance);
 private:
     QSqlDatabase db;
 };

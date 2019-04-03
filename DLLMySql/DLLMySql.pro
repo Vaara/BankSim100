@@ -39,7 +39,11 @@ HEADERS += \
         mysql.h \
         dllmysql_global.h \
         databaseconnection.h \
+<<<<<<< HEAD
     dllmysql.h
+>>>>>>> master
+=======
+        dllmysql.h
 >>>>>>> master
 
 DESTDIR = C:\Users\samij\Desktop\BankSim\BankSim100\BankSimulator\dll\

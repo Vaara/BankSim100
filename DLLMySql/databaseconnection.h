@@ -12,6 +12,11 @@ public:
     bool initialize(QString rfid);
     QString getErrorMessage();
     bool checkPin(QString pin);
+    QString getCurrentLogin();
+    bool checkConnection();
+    void lockCard();
+    bool accountHasEnoughBalance(double balance);
+    bool withdrawMoney(double amount);
 private:
     MySql *mySql;
     QString rfid;
