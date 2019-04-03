@@ -3,10 +3,10 @@
 #include <QtSerialPort/QSerialPort>
 #include <QThread>
 
-serialport::serialport()
+serialport::serialport(QString com)
 {
-serial = new QSerialPort;
-    serial->setPortName("COM9");
+    serial = new QSerialPort;
+    serial->setPortName(com);
     serial->setBaudRate(QSerialPort::Baud9600);
     serial->setDataBits(QSerialPort::Data8);
     serial->setParity(QSerialPort::NoParity);
@@ -17,19 +17,24 @@ serial = new QSerialPort;
     {
         qDebug()<< "Portti auki";
     }
+    else
+    {
+        //qDebug()<< "Portti kiinni";
+    }
 }
 
 QString serialport::print()
 {
-    while(serial->waitForReadyRead())
+    serial->readAll();
+    while(serial->waitForReadyRead(), a = 1)
     {
              QThread::msleep(50);
-             serialRead=serial->readAll();
+             serialRead=serial->read(13);
              serialRead.remove(0,3);
-             serialRead.chop(3);
              if (serialRead.count()>3)
              {
                  return serialRead;
+                 a = 0;
              }
    }
     return serialRead;

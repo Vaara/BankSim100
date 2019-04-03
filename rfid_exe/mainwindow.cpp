@@ -8,7 +8,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    olioRfidDLL = new serialport;
+    olioRfidDLL = new serialport("com9");
 }
 
 MainWindow::~MainWindow()

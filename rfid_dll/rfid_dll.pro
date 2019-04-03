@@ -18,14 +18,12 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         rfid_dll.cpp \
-    serialport.cpp \
-    serialprint.cpp
+    serialport.cpp
 
 HEADERS += \
         rfid_dll.h \
         rfid_dll_global.h \ 
-    serialport.h \
-    serialprint.h
+    serialport.h
 
 #DESTDIR = C:\temp10\dll\
 
