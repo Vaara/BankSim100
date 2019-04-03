@@ -41,3 +41,5 @@ LIBS += C:\Users\samij\Desktop\BankSim\BankSim100\BankSimulator\dll\DLLMySql.dll
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+DISTFILES +=

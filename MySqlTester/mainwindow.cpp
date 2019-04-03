@@ -16,53 +16,20 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_clicked()
 {
-    /*MySql *mySql = new MySql;
-    if (mySql->openDatabase())
-    {
-        //Database connected
-
-        if (mySql->rfidExists("0b123456789"))
-        {
-            //rfid found
-
-            if (mySql->validCard("0b123456789"))
-            {
-                //ui->label->setText("Kortti toiminnallinen");
-                if (mySql->checkPin("0b123456789","1234"))
-                {
-                    ui->label->setText("PIN oikein");
-                }
-                else
-                {
-                    ui->label->setText("Pin väärin");
-                }
-            }
-            else
-            {
-                ui->label->setText("Kortti suljettu");
-            }
-
-        }
-        else
-        {
-            //rfid not found
-        }
-    } else
-    {
-        //Database connection error
-    }
-    mySql->closeDatabase();
-    delete mySql;
-    mySql = nullptr;
-    QSqlDatabase::removeDatabase("bankDB");*/
-
-    DatabaseConnection *connection = new DatabaseConnection;
+   DatabaseConnection *connection = new DatabaseConnection;
 
     if (connection->initialize("0b123456789"))
     {
-        if(connection->checkPin("1235"))
+        if(connection->checkPin("1234"))
         {
-            this->ui->label->setText("Pin oikein");
+            if (connection->withdrawMoney(10000))
+            {
+                this->ui->label->setText("Rahat nostettu");
+            }
+            else
+            {
+                this->ui->label->setText("Rahat ei riitä");
+            }
         }
         else
         {
@@ -72,8 +39,8 @@ void MainWindow::on_pushButton_clicked()
     else
     {
         QString error = connection->getErrorMessage();
+        this->ui->label->setText(error);
     }
     delete connection;
     connection = nullptr;
-
 }

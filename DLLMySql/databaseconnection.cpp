@@ -3,6 +3,7 @@
 DatabaseConnection::DatabaseConnection()
 {
     mySql = new MySql;
+    errorMessage = "";
 }
 
 DatabaseConnection::~DatabaseConnection()
@@ -53,5 +54,38 @@ QString DatabaseConnection::getErrorMessage()
 
 bool DatabaseConnection::checkPin(QString pin)
 {
-    return mySql->checkPin(rfid, pin);
+    if (mySql->checkPin(rfid, pin))
+    {
+        mySql->updateLoginDatetime(rfid);
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+
+QString DatabaseConnection::getCurrentLogin()
+{
+    return mySql->getCurrentLoginDatetime(rfid);
+}
+
+bool DatabaseConnection::checkConnection()
+{
+    return mySql->databaseIsOpen();
+}
+
+void DatabaseConnection::lockCard()
+{
+    mySql->lockCard(rfid);
+}
+
+bool DatabaseConnection::accountHasEnoughBalance(double balance)
+{
+    return mySql->checkAccountBalanceForWithdrawal(rfid, balance);
+}
+
+bool DatabaseConnection::withdrawMoney(double amount)
+{
+    return mySql->substractMoneyFromAccount(rfid, amount);
 }
