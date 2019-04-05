@@ -8,6 +8,8 @@ DatabaseConnection::DatabaseConnection()
 
 DatabaseConnection::~DatabaseConnection()
 {
+    //delete transactions;
+    //transactions = nullptr;
     mySql->closeDatabase();
     delete mySql;
     mySql = nullptr;
@@ -88,4 +90,9 @@ bool DatabaseConnection::accountHasEnoughBalance(double balance)
 bool DatabaseConnection::withdrawMoney(double amount)
 {
     return mySql->substractMoneyFromAccount(rfid, amount);
+}
+
+QSqlQueryModel* DatabaseConnection::getTransactionModel()
+{
+    return mySql->findTransactions(rfid);
 }

@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QTableView>
 #include "C:\Users\samij\Desktop\BankSim\BankSim100\DLLMySql\databaseconnection.h"
 
 namespace Ui {
@@ -21,6 +22,8 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+    DatabaseConnection *connection;
+    QTableView *view;
 };
 
 #endif // MAINWINDOW_H

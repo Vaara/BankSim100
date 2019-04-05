@@ -17,10 +17,14 @@ public:
     void lockCard();
     bool accountHasEnoughBalance(double balance);
     bool withdrawMoney(double amount);
+    QSqlQueryModel* getTransactionModel();
+
 private:
     MySql *mySql;
     QString rfid;
     QString errorMessage;
+
+
 };
 
 #endif // DATABASECONNECTION_H

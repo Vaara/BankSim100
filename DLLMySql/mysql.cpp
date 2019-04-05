@@ -1,4 +1,16 @@
 #include "mysql.h"
+#include <QDebug>
+
+MySql::MySql()
+{
+
+}
+
+MySql::~MySql()
+{
+    delete model;
+    model = nullptr;
+}
 
 void MySql::setDatabase()
 {
@@ -120,13 +132,18 @@ bool MySql::substractMoneyFromAccount(QString rfid, double balance)
 {
     QSqlQuery query(db);
     query.exec("START TRANSACTION");
-    query.exec("SELECT balance FROM opisk_t8josa01.Accounts WHERE idAccount="
+    query.exec("SELECT balance, idAccount FROM opisk_t8josa01.Accounts WHERE idAccount="
                "(SELECT idAccount FROM opisk_t8josa01.Cards WHERE rfidNumber ='" + rfid + "')");
     query.next();
     double accountBalance = query.value(0).toDouble() - balance;
     QString newBalance = QString::number(accountBalance);
+    QString ownerAccount = query.value(1).toString();
     query.exec("UPDATE opisk_t8josa01.Accounts SET balance='" + newBalance + "' WHERE idAccount="
-               "(SELECT idAccount FROM opisk_t8josa01.Cards WHERE rfidNumber ='" + rfid + "')");                                                                                         // Create transaction here
+               "(SELECT idAccount FROM opisk_t8josa01.Cards WHERE rfidNumber ='" + rfid + "')");
+    QString newTransactionValue = QString::number(-balance);
+    QString timeNow = QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm:ss");
+    query.exec("INSERT INTO opisk_t8josa01.Transactions (idAccount, tDate, tAccount, tAmount, tName)"
+               "VALUES ('" + ownerAccount + "', '" + timeNow + "', 'FI3344556677889900', '" + newTransactionValue + "', 'Käteisnosto')");
     query.exec("SELECT balance FROM opisk_t8josa01.Accounts WHERE idAccount="
                "(SELECT idAccount FROM opisk_t8josa01.Cards WHERE rfidNumber ='" + rfid + "')");
     query.next();
@@ -142,3 +159,17 @@ bool MySql::substractMoneyFromAccount(QString rfid, double balance)
     query.finish();
     return false;
 }
+
+QSqlQueryModel* MySql::findTransactions(QString rfid)
+{
+    model = new QSqlQueryModel(this);
+    model->setQuery("SELECT tDate, tAccount, tName, tAmount FROM opisk_t8josa01.Transactions WHERE idAccount="
+                    "(SELECT idAccount FROM opisk_t8josa01.Cards WHERE rfidNumber ='" + rfid + "')", db);
+    model->setHeaderData(0, Qt::Horizontal, QObject::tr("Päiväys"));
+    model->setHeaderData(1, Qt::Horizontal, QObject::tr("Toisen tili"));
+    model->setHeaderData(2, Qt::Horizontal, QObject::tr("Tapahtuma"));
+    model->setHeaderData(3, Qt::Horizontal, QObject::tr("Määrä"));
+
+    return model;
+}
+
