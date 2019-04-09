@@ -3,13 +3,13 @@
 DatabaseConnection::DatabaseConnection()
 {
     mySql = new MySql;
+    rfid = "";
     errorMessage = "";
 }
 
 DatabaseConnection::~DatabaseConnection()
 {
-    //delete transactions;
-    //transactions = nullptr;
+    rfid = "";
     mySql->closeDatabase();
     delete mySql;
     mySql = nullptr;
@@ -67,9 +67,9 @@ bool DatabaseConnection::checkPin(QString pin)
     }
 }
 
-QString DatabaseConnection::getCurrentLogin()
+QString DatabaseConnection::getLastLogin()
 {
-    return mySql->getCurrentLoginDatetime(rfid);
+    return mySql->getLastLoginDatetime(rfid);
 }
 
 bool DatabaseConnection::checkConnection()
@@ -92,7 +92,11 @@ bool DatabaseConnection::withdrawMoney(double amount)
     return mySql->substractMoneyFromAccount(rfid, amount);
 }
 
-QSqlQueryModel* DatabaseConnection::getTransactionModel()
+QSqlQueryModel* DatabaseConnection::getTransactionModelFromPage(int perPage, int currentPage)
 {
-    return mySql->findTransactions(rfid);
+    return mySql->findTransactionsOnPage(rfid, perPage, currentPage);
+}
+
+QSqlQueryModel* DatabaseConnection::getLastTransactions(int amount) {
+    return mySql->findLastTransactions(rfid, amount);
 }

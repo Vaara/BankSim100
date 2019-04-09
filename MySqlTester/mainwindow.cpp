@@ -20,7 +20,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_clicked()
 {
-   connection = new DatabaseConnection;
+   connection = new DatabaseConnection();
 
     if (connection->initialize("0b123456789"))
     {
@@ -30,8 +30,10 @@ void MainWindow::on_pushButton_clicked()
             {
                 this->ui->label->setText("Rahat nostettu");
                 view = new QTableView();
-                view->setModel(connection->getTransactionModel());
+                QSqlQueryModel *model = connection->getTransactionModelFromPage(12,2);
+                view->setModel(model);
                 view->setWindowTitle("Tilitapahtumat");
+                view->setGeometry(2300,200,500,400);
                 view->show();
             }
             else
@@ -49,5 +51,4 @@ void MainWindow::on_pushButton_clicked()
         QString error = connection->getErrorMessage();
         this->ui->label->setText(error);
     }
-
 }

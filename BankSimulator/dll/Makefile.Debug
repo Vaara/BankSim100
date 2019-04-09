@@ -227,6 +227,7 @@ debug/moc_mainwindow.cpp: C:/Qt/5.11.3/mingw53_32/include/QtWidgets/QMainWindow 
 		C:/Qt/5.11.3/mingw53_32/include/QtWidgets/qtabbar.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtWidgets/qrubberband.h \
 		C:/Users/samij/Desktop/BankSim/BankSim100/DLLMySql/databaseconnection.h \
+		C:/Qt/5.11.3/mingw53_32/include/QtCore/QObject \
 		../../DLLMySql/dllmysql_global.h \
 		../../DLLMySql/mysql.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtSql/QtSql \
@@ -265,7 +266,6 @@ debug/moc_mainwindow.cpp: C:/Qt/5.11.3/mingw53_32/include/QtWidgets/QMainWindow 
 		C:/Qt/5.11.3/mingw53_32/include/QtCore/qexception.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtCore/qfactoryinterface.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtCore/qfileselector.h \
-		C:/Qt/5.11.3/mingw53_32/include/QtCore/QObject \
 		C:/Qt/5.11.3/mingw53_32/include/QtCore/QStringList \
 		C:/Qt/5.11.3/mingw53_32/include/QtCore/qfilesystemwatcher.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtCore/qfinalstate.h \
@@ -513,6 +513,7 @@ debug/main.o: ../../MySqlTester/main.cpp ../../MySqlTester/mainwindow.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtWidgets/qtabbar.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtWidgets/qrubberband.h \
 		C:/Users/samij/Desktop/BankSim/BankSim100/DLLMySql/databaseconnection.h \
+		C:/Qt/5.11.3/mingw53_32/include/QtCore/QObject \
 		../../DLLMySql/dllmysql_global.h \
 		../../DLLMySql/mysql.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtSql/QtSql \
@@ -551,7 +552,6 @@ debug/main.o: ../../MySqlTester/main.cpp ../../MySqlTester/mainwindow.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtCore/qexception.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtCore/qfactoryinterface.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtCore/qfileselector.h \
-		C:/Qt/5.11.3/mingw53_32/include/QtCore/QObject \
 		C:/Qt/5.11.3/mingw53_32/include/QtCore/QStringList \
 		C:/Qt/5.11.3/mingw53_32/include/QtCore/qfilesystemwatcher.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtCore/qfinalstate.h \
@@ -778,6 +778,7 @@ debug/mainwindow.o: ../../MySqlTester/mainwindow.cpp ../../MySqlTester/mainwindo
 		C:/Qt/5.11.3/mingw53_32/include/QtWidgets/qtabbar.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtWidgets/qrubberband.h \
 		C:/Users/samij/Desktop/BankSim/BankSim100/DLLMySql/databaseconnection.h \
+		C:/Qt/5.11.3/mingw53_32/include/QtCore/QObject \
 		../../DLLMySql/dllmysql_global.h \
 		../../DLLMySql/mysql.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtSql/QtSql \
@@ -816,7 +817,6 @@ debug/mainwindow.o: ../../MySqlTester/mainwindow.cpp ../../MySqlTester/mainwindo
 		C:/Qt/5.11.3/mingw53_32/include/QtCore/qexception.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtCore/qfactoryinterface.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtCore/qfileselector.h \
-		C:/Qt/5.11.3/mingw53_32/include/QtCore/QObject \
 		C:/Qt/5.11.3/mingw53_32/include/QtCore/QStringList \
 		C:/Qt/5.11.3/mingw53_32/include/QtCore/qfilesystemwatcher.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtCore/qfinalstate.h \
