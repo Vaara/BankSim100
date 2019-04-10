@@ -2,15 +2,9 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-<<<<<<< HEAD
-<<<<<<< HEAD
 #include "C:\Users\samij\Desktop\BankSim\BankSim100\DLLMySql\dllmysql.h"
-=======
-=======
 #include <QTableView>
->>>>>>> master
 #include "C:\Users\samij\Desktop\BankSim\BankSim100\DLLMySql\databaseconnection.h"
->>>>>>> master
 
 namespace Ui {
 class MainWindow;

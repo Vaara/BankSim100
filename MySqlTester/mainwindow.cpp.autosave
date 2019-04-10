@@ -36,19 +36,9 @@ void MainWindow::on_pushButton_clicked()
                 view->setGeometry(2300,200,500,400);
                 view->show();
             }
-            else
-            {
-                this->ui->label->setText("Rahat ei riitä");
-            }
-
+            
         }
-        else
-        {
-
-        }
+        
     }
-    else
-    {
-
-    }
+    
 }

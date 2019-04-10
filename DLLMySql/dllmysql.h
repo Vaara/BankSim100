@@ -1,7 +1,6 @@
 #ifndef DLLMYSQL_H
 #define DLLMYSQL_H
 
-<<<<<<< HEAD
 #include "dllmysql_global.h"
 #include <QtSql>
 #include <QDate>
@@ -19,6 +18,4 @@ private:
     QSqlDatabase db;
 };
 
-=======
->>>>>>> master
 #endif // DLLMYSQL_H
