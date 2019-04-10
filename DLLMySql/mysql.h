@@ -5,9 +5,12 @@
 #include "dllmysql_global.h"
 #include <QtSql>
 
-class DLLMYSQLSHARED_EXPORT MySql
+class DLLMYSQLSHARED_EXPORT MySql : public QObject
 {
+    Q_OBJECT
 public:
+    MySql();
+    ~MySql();
     void setDatabase();
     bool openDatabase();
     bool rfidExists(QString rfid);
@@ -17,10 +20,13 @@ public:
     void updateLoginDatetime(QString rfid);
     bool databaseIsOpen();
     void lockCard(QString rfid);
-    QString getCurrentLoginDatetime(QString rfid);
     QString getLastLoginDatetime(QString rfid);
-    bool checkAccountBalanceForWithdrawal(QString rfid, double balance);
-    bool substractMoneyFromAccount(QString rfid, double balance);
+    bool checkAccountBalanceForWithdrawal(QString rfid, double amount);
+    bool substractMoneyFromAccount(QString rfid, double amount);
+    void setModelHeaders();
+    QSqlQueryModel* findTransactionsOnPage(QString rfid, int perPage, int currentPage);
+    QSqlQueryModel* findLastTransactions(QString rfid, int amount);
 private:
     QSqlDatabase db;
+    QSqlQueryModel *model;
 };

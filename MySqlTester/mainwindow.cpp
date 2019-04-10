@@ -10,12 +10,17 @@ MainWindow::MainWindow(QWidget *parent) :
 
 MainWindow::~MainWindow()
 {
+    delete view;
+    view = nullptr;
+    delete connection;
+    connection = nullptr;
     delete ui;
 }
 
 
 void MainWindow::on_pushButton_clicked()
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     DLLMySql *mySql = new DLLMySql;
@@ -28,12 +33,15 @@ void MainWindow::on_pushButton_clicked()
 =======
    DatabaseConnection *connection = new DatabaseConnection;
 >>>>>>> master
+=======
+   connection = new DatabaseConnection();
+>>>>>>> master
 
     if (connection->initialize("0b123456789"))
     {
         if(connection->checkPin("1234"))
         {
-            if (connection->withdrawMoney(10000))
+            if (connection->withdrawMoney(50))
             {
 <<<<<<< HEAD
                 //ui->label->setText("Kortti toiminnallinen");
@@ -51,6 +59,15 @@ void MainWindow::on_pushButton_clicked()
                 }
 =======
                 this->ui->label->setText("Rahat nostettu");
+<<<<<<< HEAD
+>>>>>>> master
+=======
+                view = new QTableView();
+                QSqlQueryModel *model = connection->getTransactionModelFromPage(12,2);
+                view->setModel(model);
+                view->setWindowTitle("Tilitapahtumat");
+                view->setGeometry(2300,200,500,400);
+                view->show();
 >>>>>>> master
             }
             else
@@ -97,10 +114,13 @@ void MainWindow::on_pushButton_clicked()
         QString error = connection->getErrorMessage();
         this->ui->label->setText(error);
     }
+<<<<<<< HEAD
     delete connection;
     connection = nullptr;
 <<<<<<< HEAD
 
+>>>>>>> master
+=======
 >>>>>>> master
 =======
 >>>>>>> master

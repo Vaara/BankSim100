@@ -209,7 +209,25 @@ debug/moc_mainwindow.cpp: C:/Qt/5.11.3/mingw53_32/include/QtWidgets/QMainWindow 
 		C:/Qt/5.11.3/mingw53_32/include/QtGui/qtouchdevice.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtWidgets/qtabwidget.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtGui/qicon.h \
+		C:/Qt/5.11.3/mingw53_32/include/QtWidgets/QTableView \
+		C:/Qt/5.11.3/mingw53_32/include/QtWidgets/qtableview.h \
+		C:/Qt/5.11.3/mingw53_32/include/QtWidgets/qabstractitemview.h \
+		C:/Qt/5.11.3/mingw53_32/include/QtWidgets/qabstractscrollarea.h \
+		C:/Qt/5.11.3/mingw53_32/include/QtWidgets/qframe.h \
+		C:/Qt/5.11.3/mingw53_32/include/QtCore/qabstractitemmodel.h \
+		C:/Qt/5.11.3/mingw53_32/include/QtCore/qitemselectionmodel.h \
+		C:/Qt/5.11.3/mingw53_32/include/QtWidgets/qabstractitemdelegate.h \
+		C:/Qt/5.11.3/mingw53_32/include/QtWidgets/qstyleoption.h \
+		C:/Qt/5.11.3/mingw53_32/include/QtWidgets/qabstractspinbox.h \
+		C:/Qt/5.11.3/mingw53_32/include/QtGui/qvalidator.h \
+		C:/Qt/5.11.3/mingw53_32/include/QtCore/qregularexpression.h \
+		C:/Qt/5.11.3/mingw53_32/include/QtWidgets/qslider.h \
+		C:/Qt/5.11.3/mingw53_32/include/QtWidgets/qabstractslider.h \
+		C:/Qt/5.11.3/mingw53_32/include/QtWidgets/qstyle.h \
+		C:/Qt/5.11.3/mingw53_32/include/QtWidgets/qtabbar.h \
+		C:/Qt/5.11.3/mingw53_32/include/QtWidgets/qrubberband.h \
 		C:/Users/samij/Desktop/BankSim/BankSim100/DLLMySql/databaseconnection.h \
+		C:/Qt/5.11.3/mingw53_32/include/QtCore/QObject \
 		../../DLLMySql/dllmysql_global.h \
 		../../DLLMySql/mysql.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtSql/QtSql \
@@ -219,7 +237,6 @@ debug/moc_mainwindow.cpp: C:/Qt/5.11.3/mingw53_32/include/QtWidgets/QMainWindow 
 		C:/Qt/5.11.3/mingw53_32/include/QtCore/qabstractanimation.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtCore/qabstracteventdispatcher.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtCore/qeventloop.h \
-		C:/Qt/5.11.3/mingw53_32/include/QtCore/qabstractitemmodel.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtCore/qabstractnativeeventfilter.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtCore/qabstractproxymodel.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtCore/qabstractstate.h \
@@ -249,7 +266,6 @@ debug/moc_mainwindow.cpp: C:/Qt/5.11.3/mingw53_32/include/QtWidgets/QMainWindow 
 		C:/Qt/5.11.3/mingw53_32/include/QtCore/qexception.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtCore/qfactoryinterface.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtCore/qfileselector.h \
-		C:/Qt/5.11.3/mingw53_32/include/QtCore/QObject \
 		C:/Qt/5.11.3/mingw53_32/include/QtCore/QStringList \
 		C:/Qt/5.11.3/mingw53_32/include/QtCore/qfilesystemwatcher.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtCore/qfinalstate.h \
@@ -262,7 +278,6 @@ debug/moc_mainwindow.cpp: C:/Qt/5.11.3/mingw53_32/include/QtWidgets/QMainWindow 
 		C:/Qt/5.11.3/mingw53_32/include/QtCore/qhistorystate.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtCore/qidentityproxymodel.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtCore/qisenum.h \
-		C:/Qt/5.11.3/mingw53_32/include/QtCore/qitemselectionmodel.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtCore/qjsonarray.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtCore/qjsonvalue.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtCore/qjsondocument.h \
@@ -292,7 +307,6 @@ debug/moc_mainwindow.cpp: C:/Qt/5.11.3/mingw53_32/include/QtWidgets/QMainWindow 
 		C:/Qt/5.11.3/mingw53_32/include/QtCore/qqueue.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtCore/qrandom.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtCore/qreadwritelock.h \
-		C:/Qt/5.11.3/mingw53_32/include/QtCore/qregularexpression.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtCore/qresource.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtCore/qsavefile.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtCore/qscopedvaluerollback.h \
@@ -340,19 +354,7 @@ debug/moc_mainwindow.cpp: C:/Qt/5.11.3/mingw53_32/include/QtWidgets/QMainWindow 
 		C:/Qt/5.11.3/mingw53_32/include/QtSql/qsqlquerymodel.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtSql/qsqlrelationaldelegate.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtWidgets/qitemdelegate.h \
-		C:/Qt/5.11.3/mingw53_32/include/QtWidgets/qabstractitemdelegate.h \
-		C:/Qt/5.11.3/mingw53_32/include/QtWidgets/qstyleoption.h \
-		C:/Qt/5.11.3/mingw53_32/include/QtWidgets/qabstractspinbox.h \
-		C:/Qt/5.11.3/mingw53_32/include/QtGui/qvalidator.h \
-		C:/Qt/5.11.3/mingw53_32/include/QtWidgets/qslider.h \
-		C:/Qt/5.11.3/mingw53_32/include/QtWidgets/qabstractslider.h \
-		C:/Qt/5.11.3/mingw53_32/include/QtWidgets/qstyle.h \
-		C:/Qt/5.11.3/mingw53_32/include/QtWidgets/qtabbar.h \
-		C:/Qt/5.11.3/mingw53_32/include/QtWidgets/qrubberband.h \
-		C:/Qt/5.11.3/mingw53_32/include/QtWidgets/qframe.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtWidgets/qlistview.h \
-		C:/Qt/5.11.3/mingw53_32/include/QtWidgets/qabstractitemview.h \
-		C:/Qt/5.11.3/mingw53_32/include/QtWidgets/qabstractscrollarea.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtWidgets/qcombobox.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtSql/qsqlrelationaltablemodel.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtSql/qsqltablemodel.h \
@@ -493,7 +495,25 @@ debug/main.o: ../../MySqlTester/main.cpp ../../MySqlTester/mainwindow.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtGui/qtouchdevice.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtWidgets/qtabwidget.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtGui/qicon.h \
+		C:/Qt/5.11.3/mingw53_32/include/QtWidgets/QTableView \
+		C:/Qt/5.11.3/mingw53_32/include/QtWidgets/qtableview.h \
+		C:/Qt/5.11.3/mingw53_32/include/QtWidgets/qabstractitemview.h \
+		C:/Qt/5.11.3/mingw53_32/include/QtWidgets/qabstractscrollarea.h \
+		C:/Qt/5.11.3/mingw53_32/include/QtWidgets/qframe.h \
+		C:/Qt/5.11.3/mingw53_32/include/QtCore/qabstractitemmodel.h \
+		C:/Qt/5.11.3/mingw53_32/include/QtCore/qitemselectionmodel.h \
+		C:/Qt/5.11.3/mingw53_32/include/QtWidgets/qabstractitemdelegate.h \
+		C:/Qt/5.11.3/mingw53_32/include/QtWidgets/qstyleoption.h \
+		C:/Qt/5.11.3/mingw53_32/include/QtWidgets/qabstractspinbox.h \
+		C:/Qt/5.11.3/mingw53_32/include/QtGui/qvalidator.h \
+		C:/Qt/5.11.3/mingw53_32/include/QtCore/qregularexpression.h \
+		C:/Qt/5.11.3/mingw53_32/include/QtWidgets/qslider.h \
+		C:/Qt/5.11.3/mingw53_32/include/QtWidgets/qabstractslider.h \
+		C:/Qt/5.11.3/mingw53_32/include/QtWidgets/qstyle.h \
+		C:/Qt/5.11.3/mingw53_32/include/QtWidgets/qtabbar.h \
+		C:/Qt/5.11.3/mingw53_32/include/QtWidgets/qrubberband.h \
 		C:/Users/samij/Desktop/BankSim/BankSim100/DLLMySql/databaseconnection.h \
+		C:/Qt/5.11.3/mingw53_32/include/QtCore/QObject \
 		../../DLLMySql/dllmysql_global.h \
 		../../DLLMySql/mysql.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtSql/QtSql \
@@ -503,7 +523,6 @@ debug/main.o: ../../MySqlTester/main.cpp ../../MySqlTester/mainwindow.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtCore/qabstractanimation.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtCore/qabstracteventdispatcher.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtCore/qeventloop.h \
-		C:/Qt/5.11.3/mingw53_32/include/QtCore/qabstractitemmodel.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtCore/qabstractnativeeventfilter.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtCore/qabstractproxymodel.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtCore/qabstractstate.h \
@@ -533,7 +552,6 @@ debug/main.o: ../../MySqlTester/main.cpp ../../MySqlTester/mainwindow.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtCore/qexception.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtCore/qfactoryinterface.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtCore/qfileselector.h \
-		C:/Qt/5.11.3/mingw53_32/include/QtCore/QObject \
 		C:/Qt/5.11.3/mingw53_32/include/QtCore/QStringList \
 		C:/Qt/5.11.3/mingw53_32/include/QtCore/qfilesystemwatcher.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtCore/qfinalstate.h \
@@ -546,7 +564,6 @@ debug/main.o: ../../MySqlTester/main.cpp ../../MySqlTester/mainwindow.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtCore/qhistorystate.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtCore/qidentityproxymodel.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtCore/qisenum.h \
-		C:/Qt/5.11.3/mingw53_32/include/QtCore/qitemselectionmodel.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtCore/qjsonarray.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtCore/qjsonvalue.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtCore/qjsondocument.h \
@@ -576,7 +593,6 @@ debug/main.o: ../../MySqlTester/main.cpp ../../MySqlTester/mainwindow.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtCore/qqueue.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtCore/qrandom.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtCore/qreadwritelock.h \
-		C:/Qt/5.11.3/mingw53_32/include/QtCore/qregularexpression.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtCore/qresource.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtCore/qsavefile.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtCore/qscopedvaluerollback.h \
@@ -624,19 +640,7 @@ debug/main.o: ../../MySqlTester/main.cpp ../../MySqlTester/mainwindow.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtSql/qsqlquerymodel.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtSql/qsqlrelationaldelegate.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtWidgets/qitemdelegate.h \
-		C:/Qt/5.11.3/mingw53_32/include/QtWidgets/qabstractitemdelegate.h \
-		C:/Qt/5.11.3/mingw53_32/include/QtWidgets/qstyleoption.h \
-		C:/Qt/5.11.3/mingw53_32/include/QtWidgets/qabstractspinbox.h \
-		C:/Qt/5.11.3/mingw53_32/include/QtGui/qvalidator.h \
-		C:/Qt/5.11.3/mingw53_32/include/QtWidgets/qslider.h \
-		C:/Qt/5.11.3/mingw53_32/include/QtWidgets/qabstractslider.h \
-		C:/Qt/5.11.3/mingw53_32/include/QtWidgets/qstyle.h \
-		C:/Qt/5.11.3/mingw53_32/include/QtWidgets/qtabbar.h \
-		C:/Qt/5.11.3/mingw53_32/include/QtWidgets/qrubberband.h \
-		C:/Qt/5.11.3/mingw53_32/include/QtWidgets/qframe.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtWidgets/qlistview.h \
-		C:/Qt/5.11.3/mingw53_32/include/QtWidgets/qabstractitemview.h \
-		C:/Qt/5.11.3/mingw53_32/include/QtWidgets/qabstractscrollarea.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtWidgets/qcombobox.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtSql/qsqlrelationaltablemodel.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtSql/qsqltablemodel.h \
@@ -756,7 +760,25 @@ debug/mainwindow.o: ../../MySqlTester/mainwindow.cpp ../../MySqlTester/mainwindo
 		C:/Qt/5.11.3/mingw53_32/include/QtGui/qtouchdevice.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtWidgets/qtabwidget.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtGui/qicon.h \
+		C:/Qt/5.11.3/mingw53_32/include/QtWidgets/QTableView \
+		C:/Qt/5.11.3/mingw53_32/include/QtWidgets/qtableview.h \
+		C:/Qt/5.11.3/mingw53_32/include/QtWidgets/qabstractitemview.h \
+		C:/Qt/5.11.3/mingw53_32/include/QtWidgets/qabstractscrollarea.h \
+		C:/Qt/5.11.3/mingw53_32/include/QtWidgets/qframe.h \
+		C:/Qt/5.11.3/mingw53_32/include/QtCore/qabstractitemmodel.h \
+		C:/Qt/5.11.3/mingw53_32/include/QtCore/qitemselectionmodel.h \
+		C:/Qt/5.11.3/mingw53_32/include/QtWidgets/qabstractitemdelegate.h \
+		C:/Qt/5.11.3/mingw53_32/include/QtWidgets/qstyleoption.h \
+		C:/Qt/5.11.3/mingw53_32/include/QtWidgets/qabstractspinbox.h \
+		C:/Qt/5.11.3/mingw53_32/include/QtGui/qvalidator.h \
+		C:/Qt/5.11.3/mingw53_32/include/QtCore/qregularexpression.h \
+		C:/Qt/5.11.3/mingw53_32/include/QtWidgets/qslider.h \
+		C:/Qt/5.11.3/mingw53_32/include/QtWidgets/qabstractslider.h \
+		C:/Qt/5.11.3/mingw53_32/include/QtWidgets/qstyle.h \
+		C:/Qt/5.11.3/mingw53_32/include/QtWidgets/qtabbar.h \
+		C:/Qt/5.11.3/mingw53_32/include/QtWidgets/qrubberband.h \
 		C:/Users/samij/Desktop/BankSim/BankSim100/DLLMySql/databaseconnection.h \
+		C:/Qt/5.11.3/mingw53_32/include/QtCore/QObject \
 		../../DLLMySql/dllmysql_global.h \
 		../../DLLMySql/mysql.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtSql/QtSql \
@@ -766,7 +788,6 @@ debug/mainwindow.o: ../../MySqlTester/mainwindow.cpp ../../MySqlTester/mainwindo
 		C:/Qt/5.11.3/mingw53_32/include/QtCore/qabstractanimation.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtCore/qabstracteventdispatcher.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtCore/qeventloop.h \
-		C:/Qt/5.11.3/mingw53_32/include/QtCore/qabstractitemmodel.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtCore/qabstractnativeeventfilter.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtCore/qabstractproxymodel.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtCore/qabstractstate.h \
@@ -796,7 +817,6 @@ debug/mainwindow.o: ../../MySqlTester/mainwindow.cpp ../../MySqlTester/mainwindo
 		C:/Qt/5.11.3/mingw53_32/include/QtCore/qexception.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtCore/qfactoryinterface.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtCore/qfileselector.h \
-		C:/Qt/5.11.3/mingw53_32/include/QtCore/QObject \
 		C:/Qt/5.11.3/mingw53_32/include/QtCore/QStringList \
 		C:/Qt/5.11.3/mingw53_32/include/QtCore/qfilesystemwatcher.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtCore/qfinalstate.h \
@@ -809,7 +829,6 @@ debug/mainwindow.o: ../../MySqlTester/mainwindow.cpp ../../MySqlTester/mainwindo
 		C:/Qt/5.11.3/mingw53_32/include/QtCore/qhistorystate.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtCore/qidentityproxymodel.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtCore/qisenum.h \
-		C:/Qt/5.11.3/mingw53_32/include/QtCore/qitemselectionmodel.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtCore/qjsonarray.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtCore/qjsonvalue.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtCore/qjsondocument.h \
@@ -839,7 +858,6 @@ debug/mainwindow.o: ../../MySqlTester/mainwindow.cpp ../../MySqlTester/mainwindo
 		C:/Qt/5.11.3/mingw53_32/include/QtCore/qqueue.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtCore/qrandom.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtCore/qreadwritelock.h \
-		C:/Qt/5.11.3/mingw53_32/include/QtCore/qregularexpression.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtCore/qresource.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtCore/qsavefile.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtCore/qscopedvaluerollback.h \
@@ -887,19 +905,7 @@ debug/mainwindow.o: ../../MySqlTester/mainwindow.cpp ../../MySqlTester/mainwindo
 		C:/Qt/5.11.3/mingw53_32/include/QtSql/qsqlquerymodel.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtSql/qsqlrelationaldelegate.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtWidgets/qitemdelegate.h \
-		C:/Qt/5.11.3/mingw53_32/include/QtWidgets/qabstractitemdelegate.h \
-		C:/Qt/5.11.3/mingw53_32/include/QtWidgets/qstyleoption.h \
-		C:/Qt/5.11.3/mingw53_32/include/QtWidgets/qabstractspinbox.h \
-		C:/Qt/5.11.3/mingw53_32/include/QtGui/qvalidator.h \
-		C:/Qt/5.11.3/mingw53_32/include/QtWidgets/qslider.h \
-		C:/Qt/5.11.3/mingw53_32/include/QtWidgets/qabstractslider.h \
-		C:/Qt/5.11.3/mingw53_32/include/QtWidgets/qstyle.h \
-		C:/Qt/5.11.3/mingw53_32/include/QtWidgets/qtabbar.h \
-		C:/Qt/5.11.3/mingw53_32/include/QtWidgets/qrubberband.h \
-		C:/Qt/5.11.3/mingw53_32/include/QtWidgets/qframe.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtWidgets/qlistview.h \
-		C:/Qt/5.11.3/mingw53_32/include/QtWidgets/qabstractitemview.h \
-		C:/Qt/5.11.3/mingw53_32/include/QtWidgets/qabstractscrollarea.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtWidgets/qcombobox.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtSql/qsqlrelationaltablemodel.h \
 		C:/Qt/5.11.3/mingw53_32/include/QtSql/qsqltablemodel.h \
