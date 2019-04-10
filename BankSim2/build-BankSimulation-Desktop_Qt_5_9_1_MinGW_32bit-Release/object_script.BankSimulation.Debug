@@ -1,0 +1,17 @@
+INPUT(
+./debug/main.o
+./debug/mainwindow.o
+./debug/pincode.o
+./debug/mainmenu.o
+./debug/tilinsaldo.o
+./debug/nostarahaa.o
+./debug/nostaomasumma.o
+./debug/tilitapahtumat.o
+./debug/moc_mainwindow.o
+./debug/moc_pincode.o
+./debug/moc_mainmenu.o
+./debug/moc_tilinsaldo.o
+./debug/moc_nostarahaa.o
+./debug/moc_nostaomasumma.o
+./debug/moc_tilitapahtumat.o
+);

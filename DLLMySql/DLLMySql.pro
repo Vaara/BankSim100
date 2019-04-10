@@ -47,7 +47,7 @@ HEADERS += \
         dllmysql.h
 >>>>>>> master
 
-DESTDIR = C:\Users\samij\Desktop\BankSim\BankSim100\BankSimulator\dll\
+DESTDIR = E:\Git\BankSim100\BankSimulator\dll
 
 unix {
     target.path = /usr/lib

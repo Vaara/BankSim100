@@ -1,0 +1,17 @@
+INPUT(
+./release/main.o
+./release/mainwindow.o
+./release/pincode.o
+./release/mainmenu.o
+./release/tilinsaldo.o
+./release/nostarahaa.o
+./release/nostaomasumma.o
+./release/tilitapahtumat.o
+./release/moc_mainwindow.o
+./release/moc_pincode.o
+./release/moc_mainmenu.o
+./release/moc_tilinsaldo.o
+./release/moc_nostarahaa.o
+./release/moc_nostaomasumma.o
+./release/moc_tilitapahtumat.o
+);
