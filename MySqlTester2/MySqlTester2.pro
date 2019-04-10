@@ -1,18 +1,17 @@
 #-------------------------------------------------
 #
-# Project created by QtCreator 2019-03-26T10:19:16
+# Project created by QtCreator 2019-04-10T11:02:29
 #
 #-------------------------------------------------
 
-QT       += core
+QT       += core gui
 QT       += sql
+QT       += widgets
 
-QT       -= gui
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = DLLMySql
-TEMPLATE = lib
-
-DEFINES += DLLMYSQL_LIBRARY
+TARGET = MySqlTester2
+TEMPLATE = app
 
 # The following define makes your compiler emit warnings if you use
 # any feature of Qt which has been marked as deprecated (the exact warnings
@@ -25,19 +24,21 @@ DEFINES += QT_DEPRECATED_WARNINGS
 # You can also select to disable deprecated APIs only up to a certain version of Qt.
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
+CONFIG += c++11
+
 SOURCES += \
-        mysql.cpp \
-        databaseconnection.cpp
+        main.cpp \
+        mainwindow.cpp
 
 HEADERS += \
-        mysql.h \
-        dllmysql_global.h \
-        databaseconnection.h \
-        dllmysql.h
+        mainwindow.h
 
-DESTDIR = C:\Users\samij\Desktop\BankSim\BankSim100\BankSimulator
+FORMS += \
+        mainwindow.ui
 
-unix {
-    target.path = /usr/lib
-    INSTALLS += target
-}
+LIBS += C:\Users\samij\Desktop\BankSim\BankSim100\BankSimulator\DLLMySql.dll
+
+# Default rules for deployment.
+qnx: target.path = /tmp/$${TARGET}/bin
+else: unix:!android: target.path = /opt/$${TARGET}/bin
+!isEmpty(target.path): INSTALLS += target
