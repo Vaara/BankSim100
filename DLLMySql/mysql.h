@@ -26,6 +26,7 @@ public:
     void setModelHeaders();
     QSqlQueryModel* findTransactionsOnPage(QString rfid, int perPage, int currentPage);
     QSqlQueryModel* findLastTransactions(QString rfid, int amount);
+    int howManyTransactionPages(QString rfid, int perPage);
 private:
     QSqlDatabase db;
     QSqlQueryModel *model;

@@ -157,7 +157,7 @@ bool MySql::substractMoneyFromAccount(QString rfid, double amount)
 void MySql::setModelHeaders()
 {
     model->setHeaderData(0, Qt::Horizontal, QObject::tr("Päiväys"));
-    model->setHeaderData(1, Qt::Horizontal, QObject::tr("Toisen tili"));
+    model->setHeaderData(1, Qt::Horizontal, QObject::tr("Tili"));
     model->setHeaderData(2, Qt::Horizontal, QObject::tr("Tapahtuma"));
     model->setHeaderData(3, Qt::Horizontal, QObject::tr("Määrä"));
 }
@@ -172,7 +172,7 @@ QSqlQueryModel* MySql::findTransactionsOnPage(QString rfid, int perPage, int cur
     QString offset = QString::number(perPage * currentPage);
     model->setQuery("SELECT tDate, tAccount, tName, tAmount FROM opisk_t8josa01.Transactions WHERE idAccount="
                     "(SELECT idAccount FROM opisk_t8josa01.Cards WHERE rfidNumber ='" + rfid + "')"
-                    "LIMIT " + QString::number(perPage) + " OFFSET " + offset, db);
+                    "ORDER BY idTransactions DESC LIMIT " + QString::number(perPage) + " OFFSET " + offset, db);
     setModelHeaders();
     return model;
 }
@@ -185,7 +185,20 @@ QSqlQueryModel* MySql::findLastTransactions(QString rfid, int amount) {
     model = new QSqlQueryModel(this);
     model->setQuery("SELECT tDate, tAccount, tName, tAmount FROM opisk_t8josa01.Transactions WHERE idAccount="
                     "(SELECT idAccount FROM opisk_t8josa01.Cards WHERE rfidNumber ='" + rfid + "')"
-                    "DESC LIMIT " + QString::number(amount), db);
+                    "ORDER BY idTransactions DESC LIMIT " + QString::number(amount), db);
     setModelHeaders();
     return model;
+}
+
+int MySql::howManyTransactionPages(QString rfid, int perPage) {
+    QSqlQuery query(db);
+    query.exec("SELECT tDate FROM opisk_t8josa01.Transactions WHERE idAccount="
+               "(SELECT idAccount FROM opisk_t8josa01.Cards WHERE rfidNumber ='" + rfid + "')");
+    int transactions = 0;;
+    while (query.next())
+    {
+        transactions++;
+    }
+    qreal pages = 1.0 * transactions / perPage;
+    return qCeil(pages);
 }
