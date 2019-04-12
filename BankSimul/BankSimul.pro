@@ -54,15 +54,15 @@ DEPENDPATH += $$PWD/../build-BankSimul-Desktop_Qt_5_11_3_MinGW_32bit-Release/rel
 
 
 #Pincode
-win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../build-BankSimul-Desktop_Qt_5_11_3_MinGW_32bit-Release/release/ -lDLLPinCode
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../build-BankSimul-Desktop_Qt_5_11_3_MinGW_32bit-Release/debug/ -lDLLPinCode
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../../BankSimGit/BankSim100/DLLPinCode/release/ -lDLLPinCode
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../../BankSimGit/BankSim100/DLLPinCode/debug/ -lDLLPinCode
 
-INCLUDEPATH += $$PWD/../build-BankSimul-Desktop_Qt_5_11_3_MinGW_32bit-Release/release
-DEPENDPATH += $$PWD/../build-BankSimul-Desktop_Qt_5_11_3_MinGW_32bit-Release/release
+INCLUDEPATH += $$PWD/../../BankSimGit/BankSim100/DLLPinCode/release
+DEPENDPATH += $$PWD/../../BankSimGit/BankSim100/DLLPinCode/release
 
 #RFID
-win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../build-BankSimul-Desktop_Qt_5_11_3_MinGW_32bit-Release/release/ -lrfid_dll
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../build-BankSimul-Desktop_Qt_5_11_3_MinGW_32bit-Release/debug/ -lrfid_dll
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../../BankSimGit/BankSim100/rfid_dll/release/ -lrfid_dll
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../../BankSimGit/BankSim100/rfid_dll/debug/ -lrfid_dll
 
-INCLUDEPATH += $$PWD/../build-BankSimul-Desktop_Qt_5_11_3_MinGW_32bit-Release/release
-DEPENDPATH += $$PWD/../build-BankSimul-Desktop_Qt_5_11_3_MinGW_32bit-Release/release
+INCLUDEPATH += $$PWD/../../BankSimGit/BankSim100/rfid_dll/release
+DEPENDPATH += $$PWD/../../BankSimGit/BankSim100/rfid_dll/release

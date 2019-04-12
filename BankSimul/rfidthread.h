@@ -2,7 +2,7 @@
 #define RFIDTHREAD_H
 #include <QThread>
 #include <QDebug>
-#include "D:\QT_projekti\Git\BankSim100\BankSim100\rfid_dll\serialport.h"
+#include "D:\BankSimGit\BankSim100\rfid_dll\serialport.h"
 
 class RFIDThread: public QThread
 {

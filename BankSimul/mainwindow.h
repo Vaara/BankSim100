@@ -1,9 +1,11 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 #include <QMainWindow>
+#include <QDebug>
 #include "D:\Login_dll\DLLPinCode\dllpincode.h"
-#include "D:\QT_projekti\Git\BankSim100\BankSim100\DLLMySql\databaseconnection.h"
+#include "D:\BankSimGit\BankSim100\DLLMySql\databaseconnection.h"
 #include "rfidthread.h"
+#include "timerthread.h"
 
 namespace Ui {
 class MainWindow;
@@ -16,13 +18,19 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    void BankStart();
+    void BankStop();
 
 private:
     DatabaseConnection *connection;
     Ui::MainWindow *ui;
     DLLPinCode *objectPinCode;
-    int cardDisableCounter;
+
     RFIDThread *objectRFIDThread;
+    TimerThread *objectTimerThread;
+
+    int cardDisableCounter;
+
 
 signals:
     void enablePin();
@@ -31,7 +39,9 @@ signals:
 private slots:
     void receivePin(QString pinReceived);
     void receiveRFID(QString rfidReceived);
-    void listenRFID();
+
+protected:
+    void mousePressEvent(QMouseEvent *event);
 
 };
 
