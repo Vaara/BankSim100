@@ -20,6 +20,7 @@ public:
     bool withdrawMoney(double amount);
     QSqlQueryModel* getTransactionModelFromPage(int perPage, int currentPage);
     QSqlQueryModel* getLastTransactions(int amount);
+    int getTransactionPageCount(int perPage);
 private:
     MySql *mySql;
     QString rfid;

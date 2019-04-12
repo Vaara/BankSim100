@@ -100,3 +100,8 @@ QSqlQueryModel* DatabaseConnection::getTransactionModelFromPage(int perPage, int
 QSqlQueryModel* DatabaseConnection::getLastTransactions(int amount) {
     return mySql->findLastTransactions(rfid, amount);
 }
+
+int DatabaseConnection::getTransactionPageCount(int perPage)
+{
+    return mySql->howManyTransactionPages(rfid, perPage);
+}

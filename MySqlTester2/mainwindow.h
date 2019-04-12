@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QTableView>
+#include <QDebug>
 #include "C:\Users\samij\Desktop\BankSim\BankSim100\DLLMySql\databaseconnection.h"
 
 namespace Ui {
