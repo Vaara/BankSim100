@@ -177,7 +177,8 @@ QSqlQueryModel* MySql::findTransactionsOnPage(QString rfid, int perPage, int cur
     return model;
 }
 
-QSqlQueryModel* MySql::findLastTransactions(QString rfid, int amount) {
+QSqlQueryModel* MySql::findLastTransactions(QString rfid, int amount)
+{
     if (model != nullptr)
     {
         delete model;
@@ -190,7 +191,8 @@ QSqlQueryModel* MySql::findLastTransactions(QString rfid, int amount) {
     return model;
 }
 
-int MySql::howManyTransactionPages(QString rfid, int perPage) {
+int MySql::howManyTransactionPages(QString rfid, int perPage)
+{
     QSqlQuery query(db);
     query.exec("SELECT tDate FROM opisk_t8josa01.Transactions WHERE idAccount="
                "(SELECT idAccount FROM opisk_t8josa01.Cards WHERE rfidNumber ='" + rfid + "')");
@@ -201,4 +203,27 @@ int MySql::howManyTransactionPages(QString rfid, int perPage) {
     }
     qreal pages = 1.0 * transactions / perPage;
     return qCeil(pages);
+}
+
+double MySql::findAccountBalance(QString rfid)
+{
+    QSqlQuery query(db);
+    query.setForwardOnly(true);
+    query.exec("SELECT balance FROM opisk_t8josa01.Accounts WHERE idAccount="
+               "(SELECT idAccount FROM opisk_t8josa01.Cards WHERE rfidNumber ='" + rfid + "')");
+    query.next();
+    double balance = query.value(0).toDouble();
+    return balance;
+}
+
+QString MySql::findCardOwnerName(QString rfid)
+{
+    QSqlQuery query(db);
+    query.setForwardOnly(true);
+    query.exec("SELECT fname, lname FROM opisk_t8josa01.Customers WHERE idCustomers="
+               "(SELECT idCustomers FROM opisk_t8josa01.Cards WHERE rfidNumber ='" + rfid + "')");
+    query.next();
+    QString fname = query.value(0).toString();
+    QString lname = query.value(1).toString();
+    return fname + " " + lname;
 }

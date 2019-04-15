@@ -29,8 +29,7 @@ void MainWindow::on_pushButton_clicked()
         {
             if (connection->withdrawMoney(50))
             {
-                this->ui->label->setText("Rahat nostettu");
-                qDebug() << connection->getTransactionPageCount(12);
+                this->ui->label->setText(QString::number(connection->getCurrentBalance()));
                 view = new QTableView();
                 QSqlQueryModel *model = connection->getTransactionModelFromPage(12,0);
                 view->setModel(model);

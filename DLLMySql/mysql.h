@@ -27,6 +27,8 @@ public:
     QSqlQueryModel* findTransactionsOnPage(QString rfid, int perPage, int currentPage);
     QSqlQueryModel* findLastTransactions(QString rfid, int amount);
     int howManyTransactionPages(QString rfid, int perPage);
+    double findAccountBalance(QString rfid);
+    QString findCardOwnerName(QString rfid);
 private:
     QSqlDatabase db;
     QSqlQueryModel *model;

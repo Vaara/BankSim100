@@ -21,6 +21,8 @@ public:
     QSqlQueryModel* getTransactionModelFromPage(int perPage, int currentPage);
     QSqlQueryModel* getLastTransactions(int amount);
     int getTransactionPageCount(int perPage);
+    double getCurrentBalance();
+    QString getOwnerName();
 private:
     MySql *mySql;
     QString rfid;

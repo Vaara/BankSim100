@@ -105,3 +105,13 @@ int DatabaseConnection::getTransactionPageCount(int perPage)
 {
     return mySql->howManyTransactionPages(rfid, perPage);
 }
+
+double DatabaseConnection::getCurrentBalance()
+{
+    return mySql->findAccountBalance(rfid);
+}
+
+QString DatabaseConnection::getOwnerName()
+{
+    return mySql->findCardOwnerName(rfid);
+}
