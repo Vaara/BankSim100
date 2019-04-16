@@ -97,9 +97,6 @@ QSqlQueryModel* DatabaseConnection::getTransactionModelFromPage(int perPage, int
     return mySql->findTransactionsOnPage(rfid, perPage, currentPage);
 }
 
-QSqlQueryModel* DatabaseConnection::getLastTransactions(int amount) {
-    return mySql->findLastTransactions(rfid, amount);
-}
 
 int DatabaseConnection::getTransactionPageCount(int perPage)
 {
@@ -114,4 +111,9 @@ double DatabaseConnection::getCurrentBalance()
 QString DatabaseConnection::getOwnerName()
 {
     return mySql->findCardOwnerName(rfid);
+}
+
+bool DatabaseConnection::easyModeIsOn()
+{
+    return mySql->findEasyModeOption(rfid);
 }

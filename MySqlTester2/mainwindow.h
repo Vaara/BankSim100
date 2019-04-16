@@ -5,6 +5,7 @@
 #include <QTableView>
 #include <QDebug>
 #include "C:\Users\samij\Desktop\BankSim\BankSim100\DLLMySql\databaseconnection.h"
+#include "doubledelegate.h"
 
 namespace Ui {
 class MainWindow;
@@ -24,6 +25,7 @@ private:
     Ui::MainWindow *ui;
     DatabaseConnection *connection;
     QTableView *view;
+    DoubleDelegate *delegate;
 };
 
 

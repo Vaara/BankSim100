@@ -28,10 +28,12 @@ CONFIG += c++11
 
 SOURCES += \
         main.cpp \
-        mainwindow.cpp
+        mainwindow.cpp \
+    doubledelegate.cpp
 
 HEADERS += \
-        mainwindow.h
+        mainwindow.h \
+    doubledelegate.h
 
 FORMS += \
         mainwindow.ui

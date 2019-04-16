@@ -23,13 +23,14 @@ public:
     QString getLastLoginDatetime(QString rfid);
     bool checkAccountBalanceForWithdrawal(QString rfid, double amount);
     bool substractMoneyFromAccount(QString rfid, double amount);
-    void setModelHeaders();
     QSqlQueryModel* findTransactionsOnPage(QString rfid, int perPage, int currentPage);
     QSqlQueryModel* findLastTransactions(QString rfid, int amount);
     int howManyTransactionPages(QString rfid, int perPage);
     double findAccountBalance(QString rfid);
     QString findCardOwnerName(QString rfid);
+    bool findEasyModeOption(QString rfid);
 private:
+    void setModelHeaders();
     QSqlDatabase db;
     QSqlQueryModel *model;
 };

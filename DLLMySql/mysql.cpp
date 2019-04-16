@@ -124,6 +124,10 @@ bool MySql::checkAccountBalanceForWithdrawal(QString rfid, double amount)
 
 bool MySql::substractMoneyFromAccount(QString rfid, double amount)
 {
+    if (amount < 0 || amount > 100000000000)
+    {
+        return false;
+    }
     QSqlQuery query(db);
     query.exec("START TRANSACTION");
     query.exec("SELECT balance, idAccount FROM opisk_t8josa01.Accounts WHERE idAccount="
@@ -154,7 +158,7 @@ bool MySql::substractMoneyFromAccount(QString rfid, double amount)
     return false;
 }
 
-void MySql::setModelHeaders()
+void MySql::setModelHeaders() //private
 {
     model->setHeaderData(0, Qt::Horizontal, QObject::tr("Päiväys"));
     model->setHeaderData(1, Qt::Horizontal, QObject::tr("Tili"));
@@ -226,4 +230,14 @@ QString MySql::findCardOwnerName(QString rfid)
     QString fname = query.value(0).toString();
     QString lname = query.value(1).toString();
     return fname + " " + lname;
+}
+
+bool MySql::findEasyModeOption(QString rfid)
+{
+    QSqlQuery query(db);
+    query.setForwardOnly(true);
+    query.exec("SELECT easyMode FROM opisk_t8josa01.Cards WHERE rfidNumber ='" + rfid +"'");
+    query.next();
+    int easyModeOption = query.value(0).toInt();
+    return easyModeOption;
 }

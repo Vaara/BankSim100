@@ -11,6 +11,8 @@ MainWindow::MainWindow(QWidget *parent) :
 
 MainWindow::~MainWindow()
 {
+    delete delegate;
+    delegate = nullptr;
     delete view;
     view = nullptr;
     delete connection;
@@ -27,16 +29,25 @@ void MainWindow::on_pushButton_clicked()
     {
         if(connection->checkPin("1234"))
         {
-            if (connection->withdrawMoney(50))
+            if (!connection->easyModeIsOn())
             {
-                this->ui->label->setText(QString::number(connection->getCurrentBalance()));
+                this->ui->label->setText(connection->getOwnerName());
                 view = new QTableView();
                 QSqlQueryModel *model = connection->getTransactionModelFromPage(12,0);
                 view->setModel(model);
                 view->setWindowTitle("Tilitapahtumat");
                 view->setGeometry(2300,200,500,400);
+
+                delegate = new DoubleDelegate();
+                view->setItemDelegateForColumn(3,delegate);
                 view->show();
             }
+            else
+            {
+                this->ui->label->setText("Not on");
+            }
+
+
 
         }
 

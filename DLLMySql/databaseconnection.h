@@ -11,18 +11,19 @@ public:
     DatabaseConnection();
     ~DatabaseConnection();
     bool initialize(QString rfid);
-    QString getErrorMessage();
     bool checkPin(QString pin);
+    bool easyModeIsOn();
+    QString getErrorMessage();
+    bool accountHasEnoughBalance(double balance);
+    double getCurrentBalance();
     QString getLastLogin();
+    QString getOwnerName();
+    QSqlQueryModel* getTransactionModelFromPage(int perPage, int currentPage);
+    int getTransactionPageCount(int perPage);
     bool checkConnection();
     void lockCard();
-    bool accountHasEnoughBalance(double balance);
     bool withdrawMoney(double amount);
-    QSqlQueryModel* getTransactionModelFromPage(int perPage, int currentPage);
-    QSqlQueryModel* getLastTransactions(int amount);
-    int getTransactionPageCount(int perPage);
-    double getCurrentBalance();
-    QString getOwnerName();
+
 private:
     MySql *mySql;
     QString rfid;
