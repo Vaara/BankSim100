@@ -2,7 +2,9 @@
 #define NOSTAOMASUMMA_H
 
 #include <QWidget>
-
+#include <QMessageBox>
+#include <QDebug>
+#include "E:\Git\BankSim100\DLLMySql\databaseconnection.h"
 
 namespace Ui {
 class NostaOmaSumma;
@@ -46,8 +48,12 @@ private slots:
 
     void on_buttonBack_clicked();
 
+    void on_buttonEnter_clicked();
+
 private:
     Ui::NostaOmaSumma *ui;
+    DatabaseConnection *connection;
+    int ownWithdrawAmount;
 
 };
 

@@ -20,6 +20,7 @@ MainMenu::MainMenu(QWidget *PinCode) :
 MainMenu::~MainMenu()
 {
     delete ui;
+    tuhoaOliot();
 }
 
 void MainMenu::on_buttonNostaRahaa_clicked() //Valikon Nosta rahaa -nappi

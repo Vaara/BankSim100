@@ -4,6 +4,7 @@
 #include <QDialog>
 #include <QTableView>
 #include <QScrollArea>
+#include <QMessageBox>
 #include "E:\Git\BankSim100\DLLMySql\databaseconnection.h"
 
 
@@ -39,7 +40,10 @@ private:
     DatabaseConnection *connection;
     QTableView *view;
 
-    int pageT = 0;
-};
+    int currentPage;
+    int pageNumber;
+    int pageCount;
+    double balance;
 
+};
 #endif // TILITAPAHTUMAT_H

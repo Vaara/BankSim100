@@ -302,13 +302,13 @@
     </property>
     <property name="font">
      <font>
-      <pointsize>16</pointsize>
+      <pointsize>10</pointsize>
       <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
     <property name="text">
-     <string>ENTER</string>
+     <string>WITHDRAW</string>
     </property>
    </widget>
    <widget class="QPushButton" name="button2">
@@ -331,6 +331,21 @@
      <string>2</string>
     </property>
    </widget>
+   <zorder>buttonEnter</zorder>
+   <zorder>button9</zorder>
+   <zorder>button7</zorder>
+   <zorder>button4</zorder>
+   <zorder>button1</zorder>
+   <zorder>button5</zorder>
+   <zorder>label</zorder>
+   <zorder>buttonBack</zorder>
+   <zorder>buttonClear</zorder>
+   <zorder>button6</zorder>
+   <zorder>button3</zorder>
+   <zorder>button8</zorder>
+   <zorder>button0</zorder>
+   <zorder>lineEdit</zorder>
+   <zorder>button2</zorder>
   </widget>
  </widget>
  <resources/>

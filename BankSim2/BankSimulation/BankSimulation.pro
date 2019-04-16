@@ -55,7 +55,7 @@ FORMS += \
     tilitapahtumat.ui
 
 LIBS += \
-   E:\Git\BankSim100\DLLMySql\DLLMySql.dll
+  E:\1.Vuosi\Ohjelmistokehiyksen_solellusprojekti\BankSim2\DLLMySql.dll
 
 
 

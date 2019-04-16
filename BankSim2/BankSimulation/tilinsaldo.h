@@ -3,6 +3,11 @@
 
 #include <QDialog>
 #include <QWidget>
+#include <QTableView>
+#include <QMessageBox>
+#include <tgmath.h>
+
+#include "E:\Git\BankSim100\DLLMySql\databaseconnection.h"
 
 
 namespace Ui {
@@ -16,6 +21,7 @@ class TilinSaldo : public QWidget
 public:
     explicit TilinSaldo(QWidget *MainMenu);
     ~TilinSaldo();
+    void showTransactions();
 
 signals:
     void sigPalaaTakaisin();
@@ -28,6 +34,9 @@ private slots:
 
 private:
     Ui::TilinSaldo *ui;
+    QTableView *view;
+    DatabaseConnection *connection;
+    double balance;
 
 };
 

@@ -28,7 +28,7 @@
       <x>50</x>
       <y>130</y>
       <width>701</width>
-      <height>192</height>
+      <height>141</height>
      </rect>
     </property>
    </widget>
@@ -69,14 +69,14 @@
      </font>
     </property>
     <property name="text">
-     <string>Käytettävissä:</string>
+     <string>Card owner:</string>
     </property>
    </widget>
    <widget class="QLabel" name="label3">
     <property name="geometry">
      <rect>
-      <x>140</x>
-      <y>220</y>
+      <x>130</x>
+      <y>210</y>
       <width>121</width>
       <height>31</height>
      </rect>
@@ -112,12 +112,12 @@
      <string>Back</string>
     </property>
    </widget>
-   <widget class="QLabel" name="saldoLabel">
+   <widget class="QLabel" name="balanceLabel">
     <property name="geometry">
      <rect>
-      <x>570</x>
+      <x>290</x>
       <y>200</y>
-      <width>101</width>
+      <width>431</width>
       <height>51</height>
      </rect>
     </property>
@@ -129,55 +129,18 @@
      </font>
     </property>
     <property name="text">
-     <string>00,00€</string>
+     <string/>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
     </property>
    </widget>
-   <widget class="QLabel" name="katevarausLabel">
+   <widget class="QLabel" name="nameLabel">
     <property name="geometry">
      <rect>
-      <x>570</x>
-      <y>260</y>
-      <width>101</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>16</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="text">
-     <string>00,00€</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label2">
-    <property name="geometry">
-     <rect>
-      <x>100</x>
-      <y>270</y>
-      <width>171</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>16</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="text">
-     <string>Katevaraus:</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="kaytettavissaLabel">
-    <property name="geometry">
-     <rect>
-      <x>570</x>
+      <x>380</x>
       <y>150</y>
-      <width>161</width>
+      <width>351</width>
       <height>51</height>
      </rect>
     </property>
@@ -189,7 +152,26 @@
      </font>
     </property>
     <property name="text">
-     <string>00,00€</string>
+     <string/>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QFrame" name="frame">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>310</y>
+      <width>701</width>
+      <height>221</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
     </property>
    </widget>
   </widget>

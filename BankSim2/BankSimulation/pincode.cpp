@@ -27,6 +27,8 @@ PinCode::PinCode(QWidget *MainWindow) :
 PinCode::~PinCode()
 {
     delete ui;
+    delete objectMainMenu;
+    objectMainMenu = nullptr;
 }
 
 void PinCode::on_button1_clicked()

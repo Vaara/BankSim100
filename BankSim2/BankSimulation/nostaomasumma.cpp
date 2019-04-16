@@ -6,7 +6,8 @@ NostaOmaSumma::NostaOmaSumma(QWidget *NostaRahaa) :
     ui(new Ui::NostaOmaSumma)
 {
     ui->setupUi(this);
-
+    ownWithdrawAmount = 0;
+    connection = new DatabaseConnection;
 
     QPalette pal = palette();
 
@@ -26,6 +27,8 @@ NostaOmaSumma::NostaOmaSumma(QWidget *NostaRahaa) :
 NostaOmaSumma::~NostaOmaSumma()
 {
     delete ui;
+    delete connection;
+    connection = nullptr;
 }
 
 void NostaOmaSumma::on_button1_clicked() //Näppäimistön nappi 1
@@ -96,3 +99,26 @@ void NostaOmaSumma::palaaRahanNostoon()
 
 
 
+
+void NostaOmaSumma::on_buttonEnter_clicked()
+{
+    QString XMAX=ui->lineEdit->text();
+    ownWithdrawAmount=XMAX.toDouble();
+
+
+    if (connection->initialize("0b123456789"))//tässä komennossa ohjelma kaatuu
+    {
+        //connection->getLastLogin();
+       if(connection->checkPin("1234"))
+       {
+           if(connection->accountHasEnoughBalance(ownWithdrawAmount))
+           {
+               connection->withdrawMoney(ownWithdrawAmount);
+           }
+       }
+    }
+    QMessageBox msgBox;
+    msgBox.setText("Money is withdrawd");
+    msgBox.setStyleSheet("QLabel{min-width:450 px; font-size: 50px;} QPushButton{ width:200px; font-size: 50px; }");
+    msgBox.exec();
+}
