@@ -2,11 +2,18 @@
 
 TimerThread::TimerThread()
 {
-    idleTime = 5;
+    idleTime = 30;
+    timeLocked = false;
     idleTimer = new QTimer(this);
     idleTimer->setInterval(1000);
-    connect(idleTimer, SIGNAL(timeout()), this, SLOT(IdleTimeOut()));
-    idleTimer->start();
+    connect(idleTimer, SIGNAL(timeout()), this, SLOT(idleTimeOut()));
+}
+
+TimerThread::~TimerThread()
+{
+    delete idleTimer;
+    idleTimer = nullptr;
+    qDebug()<< QString("Timer tuhottu");
 }
 
 void TimerThread::run()
@@ -14,7 +21,7 @@ void TimerThread::run()
 
 }
 
-void TimerThread::IdleTimeOut()
+void TimerThread::idleTimeOut()
 {
 
     if(idleTime > 0)
@@ -27,15 +34,37 @@ void TimerThread::IdleTimeOut()
     {
     idleTimer->stop();
     qDebug() << "timeout";
+    emit timeOut();
+
+    if(timeLocked == true)
+    {
+        timeLocked = false;
+    }
     }
 }
 
-void TimerThread::TimerReset()
+void TimerThread::timerReset()
 {
-    idleTime = 5;
+    if(timeLocked != true)
+    {
+        idleTime = 30;
+    }
 }
 
-void TimerThread::TimerToggle()
+void TimerThread::timerStart()
+{
+    idleTime = 30;
+    idleTimer->start();
+}
+
+void TimerThread::timerStart(int setTime)
+{
+    idleTime = setTime;
+    timeLocked = true;
+    idleTimer->start();
+}
+
+void TimerThread::timerStop()
 {
     idleTimer->stop();
 }

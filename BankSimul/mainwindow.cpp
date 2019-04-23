@@ -8,98 +8,130 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
-
     objectPinCode = new DLLPinCode;
-    objectRFIDThread = new RFIDThread;
     objectTimerThread = new TimerThread;
+    objectRFIDThread = new RFIDThread;
 
-    connect(objectPinCode, SIGNAL(checkPin(QString)), this, SLOT(receivePin(QString)));
     connect(objectRFIDThread, SIGNAL(rfid(QString)), this, SLOT(receiveRFID(QString)));
+                                                                                            //connect(objectRFIDThread, SIGNAL(finished()), this, SLOT(receiveRFID()))
+    connect(objectTimerThread, SIGNAL(timeOut()), this, SLOT(bankStop()));
+    connect(objectPinCode, SIGNAL(checkPin(QString)), this, SLOT(receivePin(QString)));
 
-    BankStart();
+    RFIDThread *objectRFIDThread = new RFIDThread;
+    connect(objectRFIDThread, &RFIDThread::rfid, this, &MainWindow::receiveRFID);
+    connect(objectRFIDThread, &RFIDThread::finished, objectRFIDThread, &QObject::deleteLater);
+    objectUIBankSim = nullptr;
 
+    bankStart();
 }
 
 
 MainWindow::~MainWindow()
 {
-
     objectRFIDThread->quit();
-    objectRFIDThread->wait();
-    objectTimerThread->quit();
-    objectTimerThread->wait();
-
-    delete ui;
-    delete connection;
-    delete objectPinCode;
     delete objectRFIDThread;
-    delete objectTimerThread;
-
-    connection = nullptr;
-    objectPinCode = nullptr;
     objectRFIDThread = nullptr;
+
+    objectTimerThread->quit();
+    delete objectTimerThread;
     objectTimerThread = nullptr;
 
-}
-
-
-void MainWindow::BankStart()
-{
-
-    objectRFIDThread ->start();
-    objectTimerThread ->start();
-
-}
-
-
-void MainWindow::BankStop()
-{
     delete connection;
     connection = nullptr;
-    objectRFIDThread->quit();
-    objectRFIDThread->wait();
-    objectTimerThread->quit();
-    objectTimerThread->wait();
 
-    ui->labelPin->setText("");
-    ui->labelRFID->setText("");
-    ui->labelSQL->setText("");
+    qDebug() << "~MainWindow 1";
 
-    BankStart();
+    delete objectPinCode;
+    objectPinCode = nullptr;
+    delete ui;
+
+    //delete objectUIBankSim;
+    //objectUIBankSim = nullptr;  aiheuttaa vaikeuksia, ohjelma kaatuu jos objectUIBankSimin poistaa jos sitä ei ole luotu
+    qDebug() << "~MainWindow 2";
+}
+
+
+void MainWindow::bankStart()
+{ 
+    ui->stackedWidget->setCurrentIndex(0);
+
+    ui->titleRFID->show();
+    connection = new DatabaseConnection;
+
+    objectRFIDThread->start();
+}
+
+
+void MainWindow::bankStop()
+{
+    pageResetting();
+    deleteUIBankSim();
+    objectTimerThread->timerStop(); // pitää olla tässä tai ohjelma kaatuu logout-napilla objectUIBankSim oliossa
+
+    delete connection;
+    connection = nullptr;
+
+    ui->labelMessage->setText(""); // testaa clear();
+
+    bankStart();
 }
 
 
 void MainWindow::receiveRFID(QString rfidReceived)
 {
-    ui->labelRFID->setText(rfidReceived);
     cardDisableCounter = 2;
-    connection = new DatabaseConnection;
 
     if (connection->initialize(rfidReceived))  // "0b123456789"
+    //(connection->initialize(rfidReceived))
+    //(rfidReceived == "0B003256BD")
     {
-         objectTimerThread->TimerToggle();
-         objectTimerThread->TimerReset();
-         objectPinCode->rajapintaDLLPinCode(); // "1234"
 
+         if(objectPinCode->rajapintaDLLPinCode()==1)
+         {
+             objectUIBankSim = new UIBankSim(this,connection);
+
+             ui->stackedWidget->addWidget(objectUIBankSim);
+             connect(objectUIBankSim, SIGNAL(loggingOut()), this, SLOT(bankStop()));
+             connect(objectUIBankSim, SIGNAL(timerReset()), this, SLOT(idleTimerReset()));
+             connect(objectUIBankSim, SIGNAL(loggingOutTimed()), this, SLOT(logoutTimer()));
+             connect(this, SIGNAL(pageResetting()), objectUIBankSim, SLOT(pageReset()));
+             //objectUIBankSim->deleteLater();
+             ui->stackedWidget->setCurrentIndex(1);
+             objectTimerThread->timerStart();
+         }
+
+         else
+         {
+
+             if(cardDisableCounter ==0) // Jos kortti on lukittu, 10 sekunnin timer jotta käyttäjällä on aikaa lukea viesti. Sitten bankStop().
+             {
+                 objectTimerThread->timerStart(10);
+                 ui->titleRFID->hide();
+             }
+
+             else
+             {
+                bankStop();
+             }
+         }
     }
 
     else
     {
-        objectTimerThread->TimerReset();
-        QString error = connection->getErrorMessage();
-        ui->labelSQL->setText(error);
-        objectRFIDThread ->wait();
+        //QString error = connection->getErrorMessage();
+        ui->labelMessage->setText("Invalid card."); //ui->labelSQL->setText(error);
+        objectTimerThread->timerStart(10);
+        ui->titleRFID->hide();
     }
-
-    BankStop();
 }
 
 
 void MainWindow::receivePin(QString pinReceived)
 {
-    ui->labelPin->setText(pinReceived);
 
-    if(connection->checkPin(pinReceived))
+    if (connection->checkPin(pinReceived))
+        //(connection->checkPin(pinReceived))
+        //(pinReceived == "1234")
     {
         objectPinCode->deliverPinStatus(true);
     }
@@ -112,8 +144,9 @@ void MainWindow::receivePin(QString pinReceived)
         }
         else
         {
+        objectPinCode->deliverPinStatus(false);
         //connection->lockCard(); // kolmannella kerralla kortti tietokannassa lukkoon.
-        ui->labelPin->setText("Kortti lukittu");
+        ui->labelMessage->setText("Card has been locked. Contact your bank for further assistance");
         }
     }
 
@@ -123,5 +156,27 @@ void MainWindow::receivePin(QString pinReceived)
 void MainWindow::mousePressEvent(QMouseEvent *event)
 {
     qDebug() << "mouseclick";
-    objectTimerThread->TimerReset();
+    idleTimerReset();
+}
+
+
+void MainWindow::idleTimerReset()
+{
+    objectTimerThread->timerReset();
+}
+
+
+void MainWindow::logoutTimer()
+{
+    objectTimerThread->timerStart(5);
+}
+
+
+void MainWindow::deleteUIBankSim()
+{
+    if(objectUIBankSim != nullptr)
+    {
+    delete objectUIBankSim;
+    objectUIBankSim = nullptr;
+    }
 }

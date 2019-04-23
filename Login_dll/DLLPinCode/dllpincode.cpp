@@ -13,12 +13,15 @@ DLLPinCode::~DLLPinCode()
 }
 
 
-void DLLPinCode::rajapintaDLLPinCode()
+int DLLPinCode::rajapintaDLLPinCode()
 {
+    rejectCounter = 2;
     olioPinCode = new DLLPinCodeMoottori();
     connect(olioPinCode, SIGNAL(sendPin(QString)), this, SLOT(receivePin(QString)));
     connect(this, SIGNAL(pinStatus(bool)), olioPinCode, SLOT(receivePinStatus(bool)));
     olioPinCode ->exec();
+
+    return olioPinCode -> result();
 }
 
 
@@ -29,5 +32,20 @@ void DLLPinCode::receivePin(QString pinReceived)
 
 void DLLPinCode::deliverPinStatus(bool pinValid)
 {
-       emit pinStatus(pinValid);     // oliko pin oikein? -> dllpincodemoottori
+    if (pinValid == true)
+    {
+        olioPinCode->accept();
+    }
+    else
+    {
+        if(rejectCounter == 0)
+        {
+        olioPinCode->reject();
+        }
+        else
+        {
+        rejectCounter--;
+        }
+    }
+    emit pinStatus(pinValid);     // oliko pin oikein? -> dllpincodemoottori
 }

@@ -11,12 +11,12 @@ class DLLPINCODESHARED_EXPORT DLLPinCode: public QObject
 public:
     DLLPinCode();
     ~DLLPinCode();
-    void rajapintaDLLPinCode();
+    int rajapintaDLLPinCode();
     void deliverPinStatus(bool);
 
 private:
      DLLPinCodeMoottori *olioPinCode;
-
+     int rejectCounter;
 
 signals:
      void checkPin(QString);

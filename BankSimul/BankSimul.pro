@@ -29,40 +29,42 @@ SOURCES += \
         main.cpp \
         mainwindow.cpp \
         rfidthread.cpp \
-    timerthread.cpp
+        timerthread.cpp \
+        uibanksim.cpp
 
 HEADERS += \
         mainwindow.h \
         rfidthread.h \
-    timerthread.h
+        timerthread.h \
+        uibanksim.h
 
 FORMS += \
         mainwindow.ui \
+        uibanksim.ui
 
-# Default rules for deployment.
+#Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 
 #MySQL
-win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../build-BankSimul-Desktop_Qt_5_11_3_MinGW_32bit-Release/release/ -lDLLMySql
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../build-BankSimul-Desktop_Qt_5_11_3_MinGW_32bit-Release/debug/ -lDLLMySql
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/./release/ -lDLLMySql
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/./debug/ -lDLLMySql
 
-INCLUDEPATH += $$PWD/../build-BankSimul-Desktop_Qt_5_11_3_MinGW_32bit-Release/release
-DEPENDPATH += $$PWD/../build-BankSimul-Desktop_Qt_5_11_3_MinGW_32bit-Release/release
-
+INCLUDEPATH += $$PWD/release
+DEPENDPATH += $$PWD/release
 
 #Pincode
-win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../../BankSimGit/BankSim100/DLLPinCode/release/ -lDLLPinCode
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../../BankSimGit/BankSim100/DLLPinCode/debug/ -lDLLPinCode
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../../project/Login_dll/DLLPinCode/release/ -lDLLPinCode
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../../project/Login_dll/DLLPinCode/debug/ -lDLLPinCode
 
-INCLUDEPATH += $$PWD/../../BankSimGit/BankSim100/DLLPinCode/release
-DEPENDPATH += $$PWD/../../BankSimGit/BankSim100/DLLPinCode/release
+INCLUDEPATH += $$PWD/../../project/Login_dll/DLLPinCode/release
+DEPENDPATH += $$PWD/../../project/Login_dll/DLLPinCode/release
 
 #RFID
-win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../../BankSimGit/BankSim100/rfid_dll/release/ -lrfid_dll
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../../BankSimGit/BankSim100/rfid_dll/debug/ -lrfid_dll
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../../project/rfid_dll/release/ -lrfid_dll
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../../project/rfid_dll/debug/ -lrfid_dll
 
-INCLUDEPATH += $$PWD/../../BankSimGit/BankSim100/rfid_dll/release
-DEPENDPATH += $$PWD/../../BankSimGit/BankSim100/rfid_dll/release
+INCLUDEPATH += $$PWD/../../project/rfid_dll/release
+DEPENDPATH += $$PWD/../../project/rfid_dll/release

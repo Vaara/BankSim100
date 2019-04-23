@@ -31,7 +31,7 @@ HEADERS += \
     dllpincodemoottori.h \
     dllpincode.h
 
-DESTDIR = D:\BankSimul\build-BankSimul-Desktop_Qt_5_11_3_MinGW_32bit-Release\release
+#DESTDIR = D:\BankSimul\build-BankSimul-Desktop_Qt_5_11_3_MinGW_32bit-Release\release
 
 unix {
     target.path = /usr/lib

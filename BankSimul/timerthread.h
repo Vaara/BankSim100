@@ -10,18 +10,29 @@ Q_OBJECT
 
 public:
     TimerThread();
-    void TimerReset();
-    void TimerToggle();
+    ~TimerThread() override;
+    void timerReset();
+    void timerStop();
+    void timerStart(int setTime);
+
+signals:
+    void timeOut();
 
 private:
     int idleTime;
     QTimer *idleTimer;
+    bool timeLocked;
+
+public slots:
+    void timerStart();
 
 private slots:
-    void IdleTimeOut();
+    void idleTimeOut();
 
 protected:
     virtual void run() override;
+
+
 };
 
 #endif // TIMERTHREAD_H
