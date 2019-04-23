@@ -11,9 +11,9 @@ public:
     DatabaseConnection();
     ~DatabaseConnection();
     bool initialize(QString rfid);
+    QString getErrorMessage();
     bool checkPin(QString pin);
     bool easyModeIsOn();
-    QString getErrorMessage();
     bool accountHasEnoughBalance(double balance);
     double getCurrentBalance();
     QString getLastLogin();

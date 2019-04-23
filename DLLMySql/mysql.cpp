@@ -24,6 +24,7 @@ void MySql::setDatabase()
 bool MySql::openDatabase()
 {
     setDatabase();
+    db.setConnectOptions("MYSQL_OPT_CONNECT_TIMEOUT=10");
     return db.open();
 }
 
@@ -33,7 +34,8 @@ bool MySql::rfidExists(QString rfid)
     query.setForwardOnly(true);
     query.exec("SELECT idCard FROM opisk_t8josa01.Cards WHERE rfidNumber ='" + rfid +"'");
     query.next();
-    if (query.value(0).isNull()) {
+    if (query.value(0).isNull())
+    {
         return false;
     }
     return true;
@@ -49,7 +51,8 @@ bool MySql::validCard(QString rfid)
     QDate expiration = query.value(0).toDate();
     int validCard = query.value(1).toInt();
     qint64 daysLeft = today.daysTo(expiration);
-    if (daysLeft >= 0 && validCard == 1 ) {
+    if (daysLeft >= 0 && validCard == 1 )
+    {
         return true;
     }
     return false;
@@ -124,7 +127,7 @@ bool MySql::checkAccountBalanceForWithdrawal(QString rfid, double amount)
 
 bool MySql::substractMoneyFromAccount(QString rfid, double amount)
 {
-    if (amount < 0 || amount > 100000000000)
+    if (amount < 0 || amount >= 10000)
     {
         return false;
     }
@@ -141,7 +144,7 @@ bool MySql::substractMoneyFromAccount(QString rfid, double amount)
     QString newTransactionValue = QString::number(-amount);
     QString timeNow = QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm:ss");
     query.exec("INSERT INTO opisk_t8josa01.Transactions (idAccount, tDate, tAccount, tAmount, tName)"
-               "VALUES ('" + ownerAccount + "', '" + timeNow + "', 'FI3344556677889900', '" + newTransactionValue + "', 'Käteisnosto')");
+               "VALUES ('" + ownerAccount + "', '" + timeNow + "', 'FI3344556677889900', '" + newTransactionValue + "', 'Cash Withdrawal')");
     query.exec("SELECT balance FROM opisk_t8josa01.Accounts WHERE idAccount="
                "(SELECT idAccount FROM opisk_t8josa01.Cards WHERE rfidNumber ='" + rfid + "')");
     query.next();
@@ -158,14 +161,6 @@ bool MySql::substractMoneyFromAccount(QString rfid, double amount)
     return false;
 }
 
-void MySql::setModelHeaders() //private
-{
-    model->setHeaderData(0, Qt::Horizontal, QObject::tr("Päiväys"));
-    model->setHeaderData(1, Qt::Horizontal, QObject::tr("Tili"));
-    model->setHeaderData(2, Qt::Horizontal, QObject::tr("Tapahtuma"));
-    model->setHeaderData(3, Qt::Horizontal, QObject::tr("Määrä"));
-}
-
 QSqlQueryModel* MySql::findTransactionsOnPage(QString rfid, int perPage, int currentPage)
 {
     if (model != nullptr)
@@ -174,24 +169,12 @@ QSqlQueryModel* MySql::findTransactionsOnPage(QString rfid, int perPage, int cur
     }
     model = new QSqlQueryModel(this);
     QString offset = QString::number(perPage * currentPage);
-    model->setQuery("SELECT tDate, tAccount, tName, tAmount FROM opisk_t8josa01.Transactions WHERE idAccount="
+    model->setQuery("SELECT tDate, tName, tAmount FROM opisk_t8josa01.Transactions WHERE idAccount="
                     "(SELECT idAccount FROM opisk_t8josa01.Cards WHERE rfidNumber ='" + rfid + "')"
                     "ORDER BY idTransactions DESC LIMIT " + QString::number(perPage) + " OFFSET " + offset, db);
-    setModelHeaders();
-    return model;
-}
-
-QSqlQueryModel* MySql::findLastTransactions(QString rfid, int amount)
-{
-    if (model != nullptr)
-    {
-        delete model;
-    }
-    model = new QSqlQueryModel(this);
-    model->setQuery("SELECT tDate, tAccount, tName, tAmount FROM opisk_t8josa01.Transactions WHERE idAccount="
-                    "(SELECT idAccount FROM opisk_t8josa01.Cards WHERE rfidNumber ='" + rfid + "')"
-                    "ORDER BY idTransactions DESC LIMIT " + QString::number(amount), db);
-    setModelHeaders();
+    model->setHeaderData(0, Qt::Horizontal, QObject::tr("Date"));
+    model->setHeaderData(1, Qt::Horizontal, QObject::tr("Transaction"));
+    model->setHeaderData(2, Qt::Horizontal, QObject::tr("Amount"));
     return model;
 }
 

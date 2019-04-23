@@ -1,11 +1,5 @@
 #include "doubledelegate.h"
 
-
-DoubleDelegate::DoubleDelegate()
-{
-
-}
-
 void DoubleDelegate::paint(QPainter *painter, const QStyleOptionViewItem & option, const QModelIndex & index) const
 {
     double value = index.model()->data(index, Qt::EditRole).toDouble();

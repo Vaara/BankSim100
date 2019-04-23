@@ -26,6 +26,7 @@ private:
     DatabaseConnection *connection;
     QTableView *view;
     DoubleDelegate *delegate;
+    int i;
 };
 
 

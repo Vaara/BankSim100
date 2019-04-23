@@ -43,7 +43,7 @@ public:
         pushButton->setGeometry(QRect(150, 90, 75, 23));
         label = new QLabel(centralWidget);
         label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(160, 150, 47, 13));
+        label->setGeometry(QRect(160, 150, 661, 201));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
