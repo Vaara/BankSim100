@@ -1,0 +1,11 @@
+release/main.o
+release/mainwindow.o
+release/rfidthread.o
+release/timerthread.o
+release/uibanksim.o
+release/uibanksimeasymode.o
+release/moc_mainwindow.o
+release/moc_rfidthread.o
+release/moc_timerthread.o
+release/moc_uibanksim.o
+release/moc_uibanksimeasymode.o

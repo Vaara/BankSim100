@@ -25,7 +25,7 @@ HEADERS += \
         rfid_dll_global.h \ 
     serialport.h
 
-#DESTDIR = C:\temp10\dll\
+#DESTDIR = C:\Users\otto2\OneDrive\Tiedostot\BankSimu\BankSim100\BankSimul
 
 unix {
     target.path = /usr/lib

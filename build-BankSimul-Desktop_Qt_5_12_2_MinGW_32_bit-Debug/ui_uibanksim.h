@@ -1,0 +1,470 @@
+/********************************************************************************
+** Form generated from reading UI file 'uibanksim.ui'
+**
+** Created by: Qt User Interface Compiler version 5.12.2
+**
+** WARNING! All changes made in this file will be lost when recompiling UI file!
+********************************************************************************/
+
+#ifndef UI_UIBANKSIM_H
+#define UI_UIBANKSIM_H
+
+#include <QtCore/QVariant>
+#include <QtWidgets/QApplication>
+#include <QtWidgets/QGroupBox>
+#include <QtWidgets/QLabel>
+#include <QtWidgets/QLineEdit>
+#include <QtWidgets/QPushButton>
+#include <QtWidgets/QStackedWidget>
+#include <QtWidgets/QWidget>
+
+QT_BEGIN_NAMESPACE
+
+class Ui_UIBankSim
+{
+public:
+    QStackedWidget *navWidget;
+    QWidget *Nav;
+    QGroupBox *groupBoxNav;
+    QPushButton *buttonWithdraw;
+    QPushButton *buttonLogOut;
+    QPushButton *buttonBalance;
+    QLabel *labelATM;
+    QPushButton *buttonTransactions;
+    QWidget *Balance;
+    QGroupBox *groupBoxBalance;
+    QLabel *labelTitleAccountBalance;
+    QLabel *labelOwner;
+    QLabel *labelTitleSaldo;
+    QPushButton *buttonBackBalance;
+    QWidget *widgetBalance;
+    QLabel *labelTitleAccountHolder;
+    QLabel *labelSaldo;
+    QWidget *Withdraw;
+    QGroupBox *groupBoxWithdraw;
+    QPushButton *button240;
+    QLabel *label_2;
+    QPushButton *button140;
+    QLabel *label;
+    QPushButton *button20;
+    QPushButton *button60;
+    QPushButton *buttonBackWithdraw;
+    QPushButton *button40;
+    QPushButton *button90;
+    QPushButton *buttonSyotaSumma;
+    QWidget *withdrawCustom;
+    QGroupBox *groupBoxWithdrawCustom;
+    QPushButton *buttonNum1;
+    QPushButton *buttonNum9;
+    QPushButton *buttonNum2;
+    QPushButton *buttonNum6;
+    QPushButton *buttonClear;
+    QPushButton *buttonNum5;
+    QPushButton *buttonNum0;
+    QLineEdit *lineEdit;
+    QPushButton *buttonEnter;
+    QPushButton *buttonNum8;
+    QPushButton *buttonBack;
+    QPushButton *buttonNum4;
+    QPushButton *buttonNum7;
+    QPushButton *buttonNum3;
+    QLabel *labelTitleCustomAmount;
+    QWidget *Transactions;
+    QGroupBox *groupBoxTransactions;
+    QLabel *LabelTitleLastLogin;
+    QLabel *labelPageNumber;
+    QLabel *labelLastLogin;
+    QPushButton *previousPageButton;
+    QWidget *widgetTransaction;
+    QPushButton *buttonBackTransactions;
+    QLabel *labelBalance;
+    QLabel *labelTitleBalance;
+    QLabel *label_4;
+    QPushButton *nextPageButton;
+    QWidget *withdrawDone;
+    QGroupBox *groupBoxWithdrawDone;
+    QLabel *labelEuroTitle;
+    QLabel *labelEuroAmount;
+    QLabel *label_3;
+
+    void setupUi(QWidget *UIBankSim)
+    {
+        if (UIBankSim->objectName().isEmpty())
+            UIBankSim->setObjectName(QString::fromUtf8("UIBankSim"));
+        UIBankSim->resize(1920, 1080);
+        navWidget = new QStackedWidget(UIBankSim);
+        navWidget->setObjectName(QString::fromUtf8("navWidget"));
+        navWidget->setGeometry(QRect(0, 0, 1881, 1041));
+        navWidget->setLayoutDirection(Qt::LeftToRight);
+        navWidget->setFrameShape(QFrame::NoFrame);
+        Nav = new QWidget();
+        Nav->setObjectName(QString::fromUtf8("Nav"));
+        groupBoxNav = new QGroupBox(Nav);
+        groupBoxNav->setObjectName(QString::fromUtf8("groupBoxNav"));
+        groupBoxNav->setGeometry(QRect(19, 19, 1841, 1001));
+        buttonWithdraw = new QPushButton(groupBoxNav);
+        buttonWithdraw->setObjectName(QString::fromUtf8("buttonWithdraw"));
+        buttonWithdraw->setGeometry(QRect(780, 330, 301, 131));
+        QFont font;
+        font.setPointSize(26);
+        font.setBold(false);
+        font.setWeight(50);
+        buttonWithdraw->setFont(font);
+        buttonLogOut = new QPushButton(groupBoxNav);
+        buttonLogOut->setObjectName(QString::fromUtf8("buttonLogOut"));
+        buttonLogOut->setGeometry(QRect(780, 690, 301, 131));
+        buttonLogOut->setFont(font);
+        buttonBalance = new QPushButton(groupBoxNav);
+        buttonBalance->setObjectName(QString::fromUtf8("buttonBalance"));
+        buttonBalance->setGeometry(QRect(780, 150, 301, 131));
+        QFont font1;
+        font1.setPointSize(24);
+        font1.setBold(false);
+        font1.setWeight(50);
+        buttonBalance->setFont(font1);
+        labelATM = new QLabel(groupBoxNav);
+        labelATM->setObjectName(QString::fromUtf8("labelATM"));
+        labelATM->setGeometry(QRect(780, 40, 301, 41));
+        QFont font2;
+        font2.setPointSize(28);
+        font2.setBold(true);
+        font2.setWeight(75);
+        labelATM->setFont(font2);
+        labelATM->setAlignment(Qt::AlignCenter);
+        buttonTransactions = new QPushButton(groupBoxNav);
+        buttonTransactions->setObjectName(QString::fromUtf8("buttonTransactions"));
+        buttonTransactions->setGeometry(QRect(780, 510, 301, 131));
+        buttonTransactions->setFont(font);
+        navWidget->addWidget(Nav);
+        Balance = new QWidget();
+        Balance->setObjectName(QString::fromUtf8("Balance"));
+        groupBoxBalance = new QGroupBox(Balance);
+        groupBoxBalance->setObjectName(QString::fromUtf8("groupBoxBalance"));
+        groupBoxBalance->setGeometry(QRect(20, 20, 1841, 1001));
+        labelTitleAccountBalance = new QLabel(groupBoxBalance);
+        labelTitleAccountBalance->setObjectName(QString::fromUtf8("labelTitleAccountBalance"));
+        labelTitleAccountBalance->setGeometry(QRect(780, 40, 311, 51));
+        labelTitleAccountBalance->setFont(font2);
+        labelTitleAccountBalance->setAlignment(Qt::AlignCenter);
+        labelOwner = new QLabel(groupBoxBalance);
+        labelOwner->setObjectName(QString::fromUtf8("labelOwner"));
+        labelOwner->setGeometry(QRect(850, 130, 351, 51));
+        QFont font3;
+        font3.setPointSize(16);
+        font3.setBold(true);
+        font3.setWeight(75);
+        labelOwner->setFont(font3);
+        labelOwner->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+        labelTitleSaldo = new QLabel(groupBoxBalance);
+        labelTitleSaldo->setObjectName(QString::fromUtf8("labelTitleSaldo"));
+        labelTitleSaldo->setGeometry(QRect(636, 192, 451, 51));
+        labelTitleSaldo->setFont(font3);
+        buttonBackBalance = new QPushButton(groupBoxBalance);
+        buttonBackBalance->setObjectName(QString::fromUtf8("buttonBackBalance"));
+        buttonBackBalance->setGeometry(QRect(780, 660, 301, 101));
+        buttonBackBalance->setFont(font);
+        widgetBalance = new QWidget(groupBoxBalance);
+        widgetBalance->setObjectName(QString::fromUtf8("widgetBalance"));
+        widgetBalance->setGeometry(QRect(630, 260, 581, 361));
+        labelTitleAccountHolder = new QLabel(groupBoxBalance);
+        labelTitleAccountHolder->setObjectName(QString::fromUtf8("labelTitleAccountHolder"));
+        labelTitleAccountHolder->setGeometry(QRect(630, 130, 211, 51));
+        labelTitleAccountHolder->setFont(font3);
+        labelSaldo = new QLabel(groupBoxBalance);
+        labelSaldo->setObjectName(QString::fromUtf8("labelSaldo"));
+        labelSaldo->setGeometry(QRect(830, 190, 371, 51));
+        labelSaldo->setFont(font3);
+        labelSaldo->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+        navWidget->addWidget(Balance);
+        Withdraw = new QWidget();
+        Withdraw->setObjectName(QString::fromUtf8("Withdraw"));
+        groupBoxWithdraw = new QGroupBox(Withdraw);
+        groupBoxWithdraw->setObjectName(QString::fromUtf8("groupBoxWithdraw"));
+        groupBoxWithdraw->setGeometry(QRect(19, 19, 1841, 1001));
+        button240 = new QPushButton(groupBoxWithdraw);
+        button240->setObjectName(QString::fromUtf8("button240"));
+        button240->setGeometry(QRect(940, 430, 331, 111));
+        button240->setFont(font2);
+        button240->setStyleSheet(QString::fromUtf8(""));
+        label_2 = new QLabel(groupBoxWithdraw);
+        label_2->setObjectName(QString::fromUtf8("label_2"));
+        label_2->setGeometry(QRect(590, 40, 681, 51));
+        label_2->setFont(font2);
+        label_2->setAlignment(Qt::AlignCenter);
+        button140 = new QPushButton(groupBoxWithdraw);
+        button140->setObjectName(QString::fromUtf8("button140"));
+        button140->setGeometry(QRect(940, 300, 331, 111));
+        button140->setFont(font2);
+        button140->setStyleSheet(QString::fromUtf8(""));
+        label = new QLabel(groupBoxWithdraw);
+        label->setObjectName(QString::fromUtf8("label"));
+        label->setGeometry(QRect(590, 90, 681, 61));
+        label->setFont(font3);
+        label->setAlignment(Qt::AlignCenter);
+        button20 = new QPushButton(groupBoxWithdraw);
+        button20->setObjectName(QString::fromUtf8("button20"));
+        button20->setGeometry(QRect(590, 170, 331, 111));
+        button20->setFont(font2);
+        button20->setStyleSheet(QString::fromUtf8(""));
+        button60 = new QPushButton(groupBoxWithdraw);
+        button60->setObjectName(QString::fromUtf8("button60"));
+        button60->setGeometry(QRect(590, 430, 331, 111));
+        button60->setFont(font2);
+        button60->setStyleSheet(QString::fromUtf8(""));
+        buttonBackWithdraw = new QPushButton(groupBoxWithdraw);
+        buttonBackWithdraw->setObjectName(QString::fromUtf8("buttonBackWithdraw"));
+        buttonBackWithdraw->setGeometry(QRect(590, 560, 331, 141));
+        QFont font4;
+        font4.setPointSize(24);
+        font4.setBold(true);
+        font4.setWeight(75);
+        buttonBackWithdraw->setFont(font4);
+        button40 = new QPushButton(groupBoxWithdraw);
+        button40->setObjectName(QString::fromUtf8("button40"));
+        button40->setGeometry(QRect(590, 300, 331, 111));
+        button40->setFont(font2);
+        button40->setStyleSheet(QString::fromUtf8(""));
+        button90 = new QPushButton(groupBoxWithdraw);
+        button90->setObjectName(QString::fromUtf8("button90"));
+        button90->setGeometry(QRect(940, 170, 331, 111));
+        button90->setFont(font2);
+        button90->setStyleSheet(QString::fromUtf8(""));
+        buttonSyotaSumma = new QPushButton(groupBoxWithdraw);
+        buttonSyotaSumma->setObjectName(QString::fromUtf8("buttonSyotaSumma"));
+        buttonSyotaSumma->setGeometry(QRect(940, 560, 331, 141));
+        buttonSyotaSumma->setFont(font4);
+        navWidget->addWidget(Withdraw);
+        withdrawCustom = new QWidget();
+        withdrawCustom->setObjectName(QString::fromUtf8("withdrawCustom"));
+        groupBoxWithdrawCustom = new QGroupBox(withdrawCustom);
+        groupBoxWithdrawCustom->setObjectName(QString::fromUtf8("groupBoxWithdrawCustom"));
+        groupBoxWithdrawCustom->setGeometry(QRect(20, 20, 1841, 1001));
+        buttonNum1 = new QPushButton(groupBoxWithdrawCustom);
+        buttonNum1->setObjectName(QString::fromUtf8("buttonNum1"));
+        buttonNum1->setGeometry(QRect(710, 260, 121, 111));
+        QFont font5;
+        font5.setPointSize(36);
+        font5.setBold(true);
+        font5.setWeight(75);
+        buttonNum1->setFont(font5);
+        buttonNum9 = new QPushButton(groupBoxWithdrawCustom);
+        buttonNum9->setObjectName(QString::fromUtf8("buttonNum9"));
+        buttonNum9->setGeometry(QRect(1030, 560, 121, 111));
+        buttonNum9->setFont(font5);
+        buttonNum2 = new QPushButton(groupBoxWithdrawCustom);
+        buttonNum2->setObjectName(QString::fromUtf8("buttonNum2"));
+        buttonNum2->setGeometry(QRect(870, 260, 121, 111));
+        buttonNum2->setFont(font5);
+        buttonNum6 = new QPushButton(groupBoxWithdrawCustom);
+        buttonNum6->setObjectName(QString::fromUtf8("buttonNum6"));
+        buttonNum6->setGeometry(QRect(1030, 410, 121, 111));
+        buttonNum6->setFont(font5);
+        buttonClear = new QPushButton(groupBoxWithdrawCustom);
+        buttonClear->setObjectName(QString::fromUtf8("buttonClear"));
+        buttonClear->setGeometry(QRect(710, 710, 121, 111));
+        buttonClear->setFont(font3);
+        buttonNum5 = new QPushButton(groupBoxWithdrawCustom);
+        buttonNum5->setObjectName(QString::fromUtf8("buttonNum5"));
+        buttonNum5->setGeometry(QRect(870, 410, 121, 111));
+        buttonNum5->setFont(font5);
+        buttonNum0 = new QPushButton(groupBoxWithdrawCustom);
+        buttonNum0->setObjectName(QString::fromUtf8("buttonNum0"));
+        buttonNum0->setGeometry(QRect(870, 710, 121, 111));
+        buttonNum0->setFont(font5);
+        lineEdit = new QLineEdit(groupBoxWithdrawCustom);
+        lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
+        lineEdit->setGeometry(QRect(710, 120, 441, 81));
+        QFont font6;
+        font6.setPointSize(20);
+        font6.setBold(true);
+        font6.setWeight(75);
+        lineEdit->setFont(font6);
+        lineEdit->setEchoMode(QLineEdit::Normal);
+        lineEdit->setAlignment(Qt::AlignCenter);
+        buttonEnter = new QPushButton(groupBoxWithdrawCustom);
+        buttonEnter->setObjectName(QString::fromUtf8("buttonEnter"));
+        buttonEnter->setGeometry(QRect(1030, 710, 121, 111));
+        buttonEnter->setFont(font3);
+        buttonNum8 = new QPushButton(groupBoxWithdrawCustom);
+        buttonNum8->setObjectName(QString::fromUtf8("buttonNum8"));
+        buttonNum8->setGeometry(QRect(870, 560, 121, 111));
+        buttonNum8->setFont(font5);
+        buttonBack = new QPushButton(groupBoxWithdrawCustom);
+        buttonBack->setObjectName(QString::fromUtf8("buttonBack"));
+        buttonBack->setGeometry(QRect(560, 710, 121, 111));
+        QFont font7;
+        font7.setPointSize(14);
+        font7.setBold(true);
+        font7.setWeight(75);
+        buttonBack->setFont(font7);
+        buttonNum4 = new QPushButton(groupBoxWithdrawCustom);
+        buttonNum4->setObjectName(QString::fromUtf8("buttonNum4"));
+        buttonNum4->setGeometry(QRect(710, 410, 121, 111));
+        buttonNum4->setFont(font5);
+        buttonNum7 = new QPushButton(groupBoxWithdrawCustom);
+        buttonNum7->setObjectName(QString::fromUtf8("buttonNum7"));
+        buttonNum7->setGeometry(QRect(710, 560, 121, 111));
+        buttonNum7->setFont(font5);
+        buttonNum3 = new QPushButton(groupBoxWithdrawCustom);
+        buttonNum3->setObjectName(QString::fromUtf8("buttonNum3"));
+        buttonNum3->setGeometry(QRect(1030, 260, 121, 111));
+        buttonNum3->setFont(font5);
+        labelTitleCustomAmount = new QLabel(groupBoxWithdrawCustom);
+        labelTitleCustomAmount->setObjectName(QString::fromUtf8("labelTitleCustomAmount"));
+        labelTitleCustomAmount->setGeometry(QRect(720, 40, 431, 51));
+        labelTitleCustomAmount->setFont(font3);
+        labelTitleCustomAmount->setAlignment(Qt::AlignCenter);
+        navWidget->addWidget(withdrawCustom);
+        Transactions = new QWidget();
+        Transactions->setObjectName(QString::fromUtf8("Transactions"));
+        groupBoxTransactions = new QGroupBox(Transactions);
+        groupBoxTransactions->setObjectName(QString::fromUtf8("groupBoxTransactions"));
+        groupBoxTransactions->setGeometry(QRect(19, 19, 1841, 1001));
+        LabelTitleLastLogin = new QLabel(groupBoxTransactions);
+        LabelTitleLastLogin->setObjectName(QString::fromUtf8("LabelTitleLastLogin"));
+        LabelTitleLastLogin->setGeometry(QRect(580, 130, 141, 41));
+        LabelTitleLastLogin->setFont(font3);
+        labelPageNumber = new QLabel(groupBoxTransactions);
+        labelPageNumber->setObjectName(QString::fromUtf8("labelPageNumber"));
+        labelPageNumber->setGeometry(QRect(900, 690, 41, 61));
+        QFont font8;
+        font8.setPointSize(14);
+        font8.setBold(false);
+        font8.setWeight(50);
+        labelPageNumber->setFont(font8);
+        labelPageNumber->setAlignment(Qt::AlignCenter);
+        labelLastLogin = new QLabel(groupBoxTransactions);
+        labelLastLogin->setObjectName(QString::fromUtf8("labelLastLogin"));
+        labelLastLogin->setGeometry(QRect(990, 130, 281, 31));
+        labelLastLogin->setFont(font3);
+        labelLastLogin->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+        previousPageButton = new QPushButton(groupBoxTransactions);
+        previousPageButton->setObjectName(QString::fromUtf8("previousPageButton"));
+        previousPageButton->setGeometry(QRect(742, 690, 151, 61));
+        QFont font9;
+        font9.setPointSize(12);
+        previousPageButton->setFont(font9);
+        widgetTransaction = new QWidget(groupBoxTransactions);
+        widgetTransaction->setObjectName(QString::fromUtf8("widgetTransaction"));
+        widgetTransaction->setGeometry(QRect(580, 210, 691, 471));
+        buttonBackTransactions = new QPushButton(groupBoxTransactions);
+        buttonBackTransactions->setObjectName(QString::fromUtf8("buttonBackTransactions"));
+        buttonBackTransactions->setGeometry(QRect(770, 780, 301, 101));
+        buttonBackTransactions->setFont(font1);
+        labelBalance = new QLabel(groupBoxTransactions);
+        labelBalance->setObjectName(QString::fromUtf8("labelBalance"));
+        labelBalance->setGeometry(QRect(990, 170, 281, 31));
+        labelBalance->setFont(font3);
+        labelBalance->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+        labelTitleBalance = new QLabel(groupBoxTransactions);
+        labelTitleBalance->setObjectName(QString::fromUtf8("labelTitleBalance"));
+        labelTitleBalance->setGeometry(QRect(580, 160, 211, 51));
+        labelTitleBalance->setFont(font3);
+        label_4 = new QLabel(groupBoxTransactions);
+        label_4->setObjectName(QString::fromUtf8("label_4"));
+        label_4->setGeometry(QRect(570, 40, 721, 51));
+        label_4->setFont(font2);
+        label_4->setAlignment(Qt::AlignCenter);
+        nextPageButton = new QPushButton(groupBoxTransactions);
+        nextPageButton->setObjectName(QString::fromUtf8("nextPageButton"));
+        nextPageButton->setGeometry(QRect(950, 690, 141, 61));
+        nextPageButton->setFont(font9);
+        navWidget->addWidget(Transactions);
+        withdrawDone = new QWidget();
+        withdrawDone->setObjectName(QString::fromUtf8("withdrawDone"));
+        groupBoxWithdrawDone = new QGroupBox(withdrawDone);
+        groupBoxWithdrawDone->setObjectName(QString::fromUtf8("groupBoxWithdrawDone"));
+        groupBoxWithdrawDone->setGeometry(QRect(20, 20, 1841, 1001));
+        labelEuroTitle = new QLabel(groupBoxWithdrawDone);
+        labelEuroTitle->setObjectName(QString::fromUtf8("labelEuroTitle"));
+        labelEuroTitle->setGeometry(QRect(940, 200, 171, 81));
+        QFont font10;
+        font10.setPointSize(16);
+        labelEuroTitle->setFont(font10);
+        labelEuroAmount = new QLabel(groupBoxWithdrawDone);
+        labelEuroAmount->setObjectName(QString::fromUtf8("labelEuroAmount"));
+        labelEuroAmount->setGeometry(QRect(520, 200, 411, 81));
+        labelEuroAmount->setFont(font10);
+        labelEuroAmount->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+        label_3 = new QLabel(groupBoxWithdrawDone);
+        label_3->setObjectName(QString::fromUtf8("label_3"));
+        label_3->setGeometry(QRect(820, 320, 231, 61));
+        label_3->setFont(font10);
+        label_3->setAlignment(Qt::AlignCenter);
+        navWidget->addWidget(withdrawDone);
+
+        retranslateUi(UIBankSim);
+
+        navWidget->setCurrentIndex(1);
+
+
+        QMetaObject::connectSlotsByName(UIBankSim);
+    } // setupUi
+
+    void retranslateUi(QWidget *UIBankSim)
+    {
+        UIBankSim->setWindowTitle(QApplication::translate("UIBankSim", "Form", nullptr));
+        groupBoxNav->setTitle(QString());
+        buttonWithdraw->setText(QApplication::translate("UIBankSim", "Withdraw", nullptr));
+        buttonLogOut->setText(QApplication::translate("UIBankSim", "Logout", nullptr));
+        buttonBalance->setText(QApplication::translate("UIBankSim", "Account balance", nullptr));
+        labelATM->setText(QApplication::translate("UIBankSim", "ATM", nullptr));
+        buttonTransactions->setText(QApplication::translate("UIBankSim", "transactions", nullptr));
+        groupBoxBalance->setTitle(QString());
+        labelTitleAccountBalance->setText(QApplication::translate("UIBankSim", "Account Balance", nullptr));
+        labelOwner->setText(QString());
+        labelTitleSaldo->setText(QApplication::translate("UIBankSim", "Balance:", nullptr));
+        buttonBackBalance->setText(QApplication::translate("UIBankSim", "Back", nullptr));
+        labelTitleAccountHolder->setText(QApplication::translate("UIBankSim", "Account holder:", nullptr));
+        labelSaldo->setText(QApplication::translate("UIBankSim", "00.00\342\202\254", nullptr));
+        groupBoxWithdraw->setTitle(QString());
+        button240->setText(QApplication::translate("UIBankSim", "240\342\202\254", nullptr));
+        label_2->setText(QApplication::translate("UIBankSim", "Withdraw", nullptr));
+        button140->setText(QApplication::translate("UIBankSim", "140\342\202\254", nullptr));
+        label->setText(QApplication::translate("UIBankSim", "SELECT AMOUNT:", nullptr));
+        button20->setText(QApplication::translate("UIBankSim", "20\342\202\254", nullptr));
+        button60->setText(QApplication::translate("UIBankSim", "60\342\202\254", nullptr));
+        buttonBackWithdraw->setText(QApplication::translate("UIBankSim", "Back", nullptr));
+        button40->setText(QApplication::translate("UIBankSim", "40\342\202\254", nullptr));
+        button90->setText(QApplication::translate("UIBankSim", "90\342\202\254", nullptr));
+        buttonSyotaSumma->setText(QApplication::translate("UIBankSim", "Custom amount", nullptr));
+        groupBoxWithdrawCustom->setTitle(QString());
+        buttonNum1->setText(QApplication::translate("UIBankSim", "1", nullptr));
+        buttonNum9->setText(QApplication::translate("UIBankSim", "9", nullptr));
+        buttonNum2->setText(QApplication::translate("UIBankSim", "2", nullptr));
+        buttonNum6->setText(QApplication::translate("UIBankSim", "6", nullptr));
+        buttonClear->setText(QApplication::translate("UIBankSim", "CLEAR", nullptr));
+        buttonNum5->setText(QApplication::translate("UIBankSim", "5", nullptr));
+        buttonNum0->setText(QApplication::translate("UIBankSim", "0", nullptr));
+        buttonEnter->setText(QApplication::translate("UIBankSim", "ENTER", nullptr));
+        buttonNum8->setText(QApplication::translate("UIBankSim", "8", nullptr));
+        buttonBack->setText(QApplication::translate("UIBankSim", "BACK", nullptr));
+        buttonNum4->setText(QApplication::translate("UIBankSim", "4", nullptr));
+        buttonNum7->setText(QApplication::translate("UIBankSim", "7", nullptr));
+        buttonNum3->setText(QApplication::translate("UIBankSim", "3", nullptr));
+        labelTitleCustomAmount->setText(QApplication::translate("UIBankSim", "Withdraw custom amount:", nullptr));
+        groupBoxTransactions->setTitle(QString());
+        LabelTitleLastLogin->setText(QApplication::translate("UIBankSim", "Last Login:", nullptr));
+        labelPageNumber->setText(QString());
+        labelLastLogin->setText(QApplication::translate("UIBankSim", "YYYY-MM-DD HH:MM:SS", nullptr));
+        previousPageButton->setText(QApplication::translate("UIBankSim", "<Previous Page", nullptr));
+        buttonBackTransactions->setText(QApplication::translate("UIBankSim", "Back", nullptr));
+        labelBalance->setText(QApplication::translate("UIBankSim", "00.00 \342\202\254", nullptr));
+        labelTitleBalance->setText(QApplication::translate("UIBankSim", "Balance:", nullptr));
+        label_4->setText(QApplication::translate("UIBankSim", "Transactions", nullptr));
+        nextPageButton->setText(QApplication::translate("UIBankSim", "Next Page>", nullptr));
+        groupBoxWithdrawDone->setTitle(QString());
+        labelEuroTitle->setText(QApplication::translate("UIBankSim", "Euros withdrawn", nullptr));
+        labelEuroAmount->setText(QApplication::translate("UIBankSim", "00.00", nullptr));
+        label_3->setText(QApplication::translate("UIBankSim", "Logging out", nullptr));
+    } // retranslateUi
+
+};
+
+namespace Ui {
+    class UIBankSim: public Ui_UIBankSim {};
+} // namespace Ui
+
+QT_END_NAMESPACE
+
+#endif // UI_UIBANKSIM_H

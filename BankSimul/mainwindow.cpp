@@ -11,17 +11,17 @@ MainWindow::MainWindow(QWidget *parent) :
     objectPinCode = new DLLPinCode;
     objectTimerThread = new TimerThread;
     objectRFIDThread = new RFIDThread;
+    objectTextToSpeech = new TextToSpeech;
 
     connect(objectRFIDThread, SIGNAL(rfid(QString)), this, SLOT(receiveRFID(QString)));
-                                                                                            //connect(objectRFIDThread, SIGNAL(finished()), this, SLOT(receiveRFID()))
+                                                                                        //connect(objectRFIDThread, SIGNAL(finished()), this, SLOT(receiveRFID()))
     connect(objectTimerThread, SIGNAL(timeOut()), this, SLOT(bankStop()));
     connect(objectPinCode, SIGNAL(checkPin(QString)), this, SLOT(receivePin(QString)));
-
     RFIDThread *objectRFIDThread = new RFIDThread;
     connect(objectRFIDThread, &RFIDThread::rfid, this, &MainWindow::receiveRFID);
     connect(objectRFIDThread, &RFIDThread::finished, objectRFIDThread, &QObject::deleteLater);
     objectUIBankSim = nullptr;
-
+    objectUIBankSimEasyMode = nullptr;
     bankStart();
 }
 
@@ -88,8 +88,21 @@ void MainWindow::receiveRFID(QString rfidReceived)
 
          if(objectPinCode->rajapintaDLLPinCode()==1)
          {
+             if(connection->easyModeIsOn())
+             {
+                 qDebug()<<"easymode is on";
+                 objectUIBankSimEasyMode = new UIBankSimeasymode(this,connection);
+                 ui->stackedWidget->addWidget(objectUIBankSimEasyMode);
+                 connect(objectUIBankSimEasyMode, SIGNAL(loggingOut()), this, SLOT(bankStop()));
+                 connect(objectUIBankSimEasyMode, SIGNAL(timerReset()), this, SLOT(idleTimerReset()));
+                 connect(objectUIBankSimEasyMode, SIGNAL(loggingOutTimed()), this, SLOT(logoutTimer()));
+                 connect(this, SIGNAL(pageResetting()), objectUIBankSim, SLOT(pageReset()));
+                 //objectUIBankSim->deleteLater();
+                 ui->stackedWidget->setCurrentIndex(1);
+                 objectTimerThread->timerStart();
+             }
+             else {
              objectUIBankSim = new UIBankSim(this,connection);
-
              ui->stackedWidget->addWidget(objectUIBankSim);
              connect(objectUIBankSim, SIGNAL(loggingOut()), this, SLOT(bankStop()));
              connect(objectUIBankSim, SIGNAL(timerReset()), this, SLOT(idleTimerReset()));
@@ -98,6 +111,7 @@ void MainWindow::receiveRFID(QString rfidReceived)
              //objectUIBankSim->deleteLater();
              ui->stackedWidget->setCurrentIndex(1);
              objectTimerThread->timerStart();
+             }
          }
 
          else
@@ -179,4 +193,10 @@ void MainWindow::deleteUIBankSim()
     delete objectUIBankSim;
     objectUIBankSim = nullptr;
     }
+    if(objectUIBankSimEasyMode !=nullptr)
+    {
+        delete objectUIBankSimEasyMode;
+        objectUIBankSimEasyMode = nullptr;
+    }
 }
+

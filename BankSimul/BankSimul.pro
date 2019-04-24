@@ -30,17 +30,20 @@ SOURCES += \
         mainwindow.cpp \
         rfidthread.cpp \
         timerthread.cpp \
-        uibanksim.cpp
+        uibanksim.cpp \
+    uibanksimeasymode.cpp
 
 HEADERS += \
         mainwindow.h \
         rfidthread.h \
         timerthread.h \
-        uibanksim.h
+        uibanksim.h \
+    uibanksimeasymode.h
 
 FORMS += \
         mainwindow.ui \
-        uibanksim.ui
+        uibanksim.ui \
+    uibanksimeasymode.ui
 
 #Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -55,16 +58,26 @@ else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/./debug/ -lDLLMySql
 INCLUDEPATH += $$PWD/release
 DEPENDPATH += $$PWD/release
 
-#Pincode
-win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../../project/Login_dll/DLLPinCode/release/ -lDLLPinCode
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../../project/Login_dll/DLLPinCode/debug/ -lDLLPinCode
 
-INCLUDEPATH += $$PWD/../../project/Login_dll/DLLPinCode/release
-DEPENDPATH += $$PWD/../../project/Login_dll/DLLPinCode/release
+
+#Pincode
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../Login_dll/DLLPinCode/release/release/ -lDLLPinCode
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../Login_dll/DLLPinCode/release/debug/ -lDLLPinCode
+
+INCLUDEPATH += $$PWD/../Login_dll/DLLPinCode/release/release
+DEPENDPATH += $$PWD/../Login_dll/DLLPinCode/release/release
+
 
 #RFID
-win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../../project/rfid_dll/release/ -lrfid_dll
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../../project/rfid_dll/debug/ -lrfid_dll
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../rfid_dll/release/ -lrfid_dll
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../rfid_dll/debug/ -lrfid_dll
 
-INCLUDEPATH += $$PWD/../../project/rfid_dll/release
-DEPENDPATH += $$PWD/../../project/rfid_dll/release
+INCLUDEPATH += $$PWD/../rfid_dll/release
+DEPENDPATH += $$PWD/../rfid_dll/release
+
+#TEXTTOSPEECH
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../TextToSpeechDLL/TextToSpeech/release/ -lTextToSpeech
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../TextToSpeechDLL/TextToSpeech/debug/ -lTextToSpeech
+
+INCLUDEPATH += $$PWD/../TextToSpeechDLL/TextToSpeech/release
+DEPENDPATH += $$PWD/../TextToSpeechDLL/TextToSpeech/release

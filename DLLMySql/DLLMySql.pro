@@ -35,7 +35,7 @@ HEADERS += \
         databaseconnection.h \
         dllmysql.h
 
-DESTDIR = C:\Users\samij\Desktop\BankSim\BankSim100\BankSimulator
+#DESTDIR = C:\Users\otto2\OneDrive\Tiedostot\BankSimu\BankSim100\BankSimul
 
 unix {
     target.path = /usr/lib

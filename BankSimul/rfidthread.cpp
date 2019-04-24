@@ -2,7 +2,7 @@
 
 RFIDThread::RFIDThread()
 {
-    objectRfidDLL = new serialport("COM25"); // tähän oma COM -portti
+    objectRfidDLL = new serialport("COM9"); // tähän oma COM -portti
 }
 
 RFIDThread::~RFIDThread()

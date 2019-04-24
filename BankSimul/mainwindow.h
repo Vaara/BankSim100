@@ -2,11 +2,13 @@
 #define MAINWINDOW_H
 #include <QMainWindow>
 #include <QDebug>
-#include "D:\project\Login_dll\DLLPinCode\dllpincode.h"
-#include "D:\project\DLLMySql\databaseconnection.h"
+#include "C:\Users\otto2\OneDrive\Tiedostot\BankSimu\BankSim100\Login_dll\DLLPinCode\dllpincode.h"
+#include "C:\Users\otto2\OneDrive\Tiedostot\BankSimu\BankSim100\DLLMySql\databaseconnection.h"
+#include "C:\Users\otto2\OneDrive\Tiedostot\BankSimu\BankSim100\TextToSpeechDLL\TextToSpeech\texttospeech.h"
 #include "rfidthread.h"
 #include "timerthread.h"
 #include "uibanksim.h"
+#include "uibanksimeasymode.h"
 
 namespace Ui {
 class MainWindow;
@@ -15,7 +17,6 @@ class MainWindow;
 class MainWindow : public QMainWindow
 {
    Q_OBJECT
-   QThread workerRFIDThread;
 
 public:
     explicit MainWindow(QWidget *parent = nullptr);
@@ -31,8 +32,9 @@ private:
     RFIDThread *objectRFIDThread;
     TimerThread *objectTimerThread;
     UIBankSim *objectUIBankSim;
-
+    UIBankSimeasymode *objectUIBankSimEasyMode;
     int cardDisableCounter;
+    TextToSpeech *objectTextToSpeech;
 
 signals:
     void enablePin();

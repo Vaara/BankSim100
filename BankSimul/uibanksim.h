@@ -4,7 +4,7 @@
 #include <QWidget>
 #include <QTableView>
 #include <QMessageBox>
-#include "D:\project\DLLMySql\databaseconnection.h"
+#include "C:\Users\otto2\OneDrive\Tiedostot\BankSimu\BankSim100\DLLMySql\databaseconnection.h"
 
 namespace Ui {
 class UIBankSim;

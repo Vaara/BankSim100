@@ -1,0 +1,11 @@
+debug/main.o
+debug/mainwindow.o
+debug/rfidthread.o
+debug/timerthread.o
+debug/uibanksim.o
+debug/uibanksimeasymode.o
+debug/moc_mainwindow.o
+debug/moc_rfidthread.o
+debug/moc_timerthread.o
+debug/moc_uibanksim.o
+debug/moc_uibanksimeasymode.o
